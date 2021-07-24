@@ -2,7 +2,11 @@
 //Coordinates for Singapore
 let singapore = [1.3558681517963378, 103.81259782407385];
 //Centre point on first load
-let map = L.map('singapore-map').setView(singapore, 12.18 ); 
+let map = L.map('singapore-map').setView(singapore, 12 ); 
+
+let corner1 = L.latLng(1.56073, 104.11475);
+let corner2 = L.latLng(1.16, 103.502);
+bounds = L.latLngBounds(corner1, corner2);
 
 // Tile layer
 L.tileLayer(
@@ -100,19 +104,7 @@ window.addEventListener('DOMContentLoaded', async function(){
     L.control.layers(baseLayer, overlays).addTo(map)
     allBusStops.addTo(map);
     allClubs.addTo(map);
-    
+
 //end of async function
 })
 
-
-//Testing
-//Loading geoJson data for Anytime Fitness Club loc and info
-// window.addEventListener('DOMContentLoaded', async function(){
-//     let response = await axios.get('data/CLUB.geojson');
-//     let x = L.geoJson(response.data,{
-//         onEachFeature: function(feature,layer){
-//             layer.bindPopup(feature.properties.Club + feature.properties.Address + clubIcon)
-//         }
-//     }).addTo(map)
-
-// })
