@@ -1,7 +1,8 @@
+
 //Coordinates for Singapore
 let singapore = [1.3558681517963378, 103.81259782407385];
 //Centre point on first load
-let map = L.map('singapore-map').setView(singapore, 12.48 ); 
+let map = L.map('singapore-map').setView(singapore, 12.18 ); 
 
 // Tile layer
 L.tileLayer(
@@ -17,6 +18,30 @@ L.tileLayer(
             'pk.eyJ1IjoiZGFyeWx3b29uZyIsImEiOiJja3I5cDcwMWI0YjE1MnBxaG04ZjQ2MGE4In0.vQSEV1EzN_aerLwJlfmswA'
     }
 ).addTo(map);
+
+
+//One MapSG Default
+let defaultMap = L.layerGroup();
+
+let OneMapSG_Default = L.tileLayer('https://maps-{s}.onemap.sg/v3/Default/{z}/{x}/{y}.png', {
+	minZoom: 11,
+	maxZoom: 18,
+	bounds: [[1.56073, 104.11475], [1.16, 103.502]],
+	attribution: '<img src="https://docs.onemap.sg/maps/images/oneMap64-01.png" style="height:20px;width:20px;"/> New OneMap | Map data &copy; contributors, <a href="http://SLA.gov.sg">Singapore Land Authority</a>'
+}).addTo(defaultMap)
+
+//One MapSG Night
+
+let darkModeMap = L.layerGroup();
+
+let OneMapSG_Night = L.tileLayer('https://maps-{s}.onemap.sg/v3/Night/{z}/{x}/{y}.png', {
+	minZoom: 11,
+	maxZoom: 18,
+	bounds: [[1.56073, 104.11475], [1.16, 103.502]],
+	attribution: '<img src="https://docs.onemap.sg/maps/images/oneMap64-01.png" style="height:20px;width:20px;"/> New OneMap | Map data &copy; contributors, <a href="http://SLA.gov.sg">Singapore Land Authority</a>'
+}).addTo (darkModeMap)
+
+
 
 //icon for clubs
 const clubIcon = L.icon({
@@ -49,11 +74,6 @@ window.addEventListener('DOMContentLoaded', async function(){
 })
 
 
-
-
-
-
-
 //Layer group for bus stops - All
 let allBusStops = L.layerGroup();
 
@@ -70,7 +90,7 @@ window.addEventListener('DOMContentLoaded', async function(){
     let response = await axios.get('data/BUS.geojson');
     let busLayer = L.geoJson(response.data,{
         onEachFeature: function(feature,layer){
-            layer.bindPopup(feature.properties.BusStopName + feature.properties.StopID)
+            layer.bindPopup(feature.properties.BusStopName)
         }
     }).addTo(busCluster)
 
@@ -78,10 +98,12 @@ window.addEventListener('DOMContentLoaded', async function(){
 
 //Layer control
 let baseLayer ={
-    'baseMarkers': allClubs
+    'OneMapSG': defaultMap,
+    'Dark Mode': darkModeMap
 } 
-
 let overlays = {
+    // 'Dark Mode': darkModeMap
+    'clubMarkers': allClubs,
     'busStopMarkers': allBusStops
     
 }
@@ -100,6 +122,6 @@ allClubs.addTo(map);
 //         onEachFeature: function(feature,layer){
 //             layer.bindPopup(feature.properties.Club + feature.properties.Address + clubIcon)
 //         }
-//     }).addTo(clubCluster)
+//     }).addTo(map)
 
 // })
