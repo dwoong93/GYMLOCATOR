@@ -50,68 +50,59 @@ const clubIcon = L.icon({
     iconAnchor: [20, 25]
 })
 
+//Importing of data
+window.addEventListener('DOMContentLoaded', async function(){
+
 
 //Layer group for Anytime Fitness Club - All
-let allClubs = L.layerGroup();
+    let allClubs = L.layerGroup();
 
 //Clustering for for Anytime Fitness Club Locations
-let clubCluster = L.markerClusterGroup({
-    spiderfyOnMaxZoom: false,
-	showCoverageOnHover: false,
-	zoomToBoundsOnClick: true
-});
-clubCluster.addTo(allClubs)//add cluster to layer, layer add to map
+    let clubCluster = L.markerClusterGroup({
+        spiderfyOnMaxZoom: false,
+        showCoverageOnHover: false,
+        zoomToBoundsOnClick: true
+    });
+    clubCluster.addTo(allClubs)
 
-//Loading geoJson data for Anytime Fitness Club loc and info
-window.addEventListener('DOMContentLoaded', async function(){
-    let response = await axios.get('data/CLUB.geojson');
-    let clubs = L.geoJson(response.data,{
-        onEachFeature: function(feature,layer){
-            layer.bindPopup(feature.properties.Club + feature.properties.Address + clubIcon)
-        }
-    }).addTo(clubCluster)
-
-})
+//Loading geoJson data for gym clubs
+        let response = await axios.get('data/CLUB.geojson');
+        let clubs = L.geoJson(response.data,{
+            onEachFeature: function(feature,layer){
+                layer.bindPopup(feature.properties.Club + feature.properties.Address + clubIcon)
+            }
+        }).addTo(clubCluster)
 
 
 //Layer group for bus stops - All
-let allBusStops = L.layerGroup();
+    let allBusStops = L.layerGroup()
+    //Loading geoJson data for bus stop loc and info
+        let response2 = await axios.get('data/BUS.geojson');
+        let busLayer = L.geoJson(response2.data,{
+            onEachFeature: function(feature,layer){
+                layer.bindPopup(feature.properties.busStopName)
+            }
+        }).addTo(allBusStops)
 
-//Clustering for ALL bus stops
-let busCluster = L.markerClusterGroup({
-    spiderfyOnMaxZoom: false,
-	showCoverageOnHover: false,
-	zoomToBoundsOnClick: true
-});
-busCluster.addTo(allBusStops)//add cluster to layer, layer add to map
-
-//Loading geoJson data for bus stop loc and info
-window.addEventListener('DOMContentLoaded', async function(){
-    let response = await axios.get('data/BUS.geojson');
-    let busLayer = L.geoJson(response.data,{
-        onEachFeature: function(feature,layer){
-            layer.bindPopup(feature.properties.BusStopName)
-        }
-    }).addTo(busCluster)
-
-})
-
-//Layer control
-let baseLayer ={
-    'OneMapSG': defaultMap,
-    'Dark Mode': darkModeMap
-} 
-let overlays = {
-    // 'Dark Mode': darkModeMap
-    'clubMarkers': allClubs,
-    'busStopMarkers': allBusStops
     
-}
+//Layer control
+    let baseLayer ={
+        'OneMapSG': defaultMap,
+        'Dark Mode': darkModeMap
+    } 
+    let overlays = {
+        // 'Dark Mode': darkModeMap
+        'Show All Clubs': allClubs,
+        'Show Bus Stops': allBusStops
+        
+    }
 
-L.control.layers(baseLayer, overlays).addTo(map)
-allBusStops.addTo(map);
-allClubs.addTo(map);
-
+    L.control.layers(baseLayer, overlays).addTo(map)
+    allBusStops.addTo(map);
+    allClubs.addTo(map);
+    
+//end of async function
+})
 
 
 //Testing
