@@ -61,7 +61,7 @@ let allBusStops = L.layerGroup();
 let busCluster = L.markerClusterGroup({
     spiderfyOnMaxZoom: false,
 	showCoverageOnHover: false,
-	zoomToBoundsOnClick: false
+	zoomToBoundsOnClick: true
 });
 busCluster.addTo(allBusStops)//add cluster to layer, layer add to map
 
@@ -70,7 +70,7 @@ window.addEventListener('DOMContentLoaded', async function(){
     let response = await axios.get('data/BUS.geojson');
     let busLayer = L.geoJson(response.data,{
         onEachFeature: function(feature,layer){
-            layer.bindPopup(feature.properties.Bus)
+            layer.bindPopup(feature.properties.BusStopName + feature.properties.StopID)
         }
     }).addTo(busCluster)
 
@@ -83,8 +83,23 @@ let baseLayer ={
 
 let overlays = {
     'busStopMarkers': allBusStops
+    
 }
 
 L.control.layers(baseLayer, overlays).addTo(map)
 allBusStops.addTo(map);
 allClubs.addTo(map);
+
+
+
+//Testing
+//Loading geoJson data for Anytime Fitness Club loc and info
+// window.addEventListener('DOMContentLoaded', async function(){
+//     let response = await axios.get('data/CLUB.geojson');
+//     let x = L.geoJson(response.data,{
+//         onEachFeature: function(feature,layer){
+//             layer.bindPopup(feature.properties.Club + feature.properties.Address + clubIcon)
+//         }
+//     }).addTo(clubCluster)
+
+// })
