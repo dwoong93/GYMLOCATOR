@@ -11,13 +11,12 @@
         crossorigin="" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styling/styles.css">
 </head>
 
 <body>
-    <div id="singapore-map">
-        <!-- <button id="darkmodebtn">Switch to Dark Mode</button> -->
-    </div>
+    <button id="clubToggleBtn">Show Clubs</button>
+    <div id="singapore-map"></div>
 
 
     <!--Leaflet javascript-->
@@ -28,7 +27,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="script.js"></script>
+    <script src="scripts/model.js"></script>
+    <script src="scripts/view,js"></script>
+    <script src="scripts/controller.js"></script>
 </body>
 
 </html>
