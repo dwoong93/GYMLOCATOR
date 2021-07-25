@@ -100,6 +100,7 @@ window.addEventListener('DOMContentLoaded', async function(){
             }
         }).addTo(allBusStops)
 
+
     
 //Layer control
     let baseLayer ={
@@ -118,12 +119,7 @@ window.addEventListener('DOMContentLoaded', async function(){
     allClubs.addTo(map);
 
 
-    let response3 = await axios.get('');
-        let slaLayer = L.geoJson(response3.data,{
-            onEachFeature: function(feature,layer){
-                layer.bindPopup(feature.properties)
-            }
-        }).addTo(map)
+    
 
 //end of async function
 })
