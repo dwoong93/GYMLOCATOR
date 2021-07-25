@@ -71,9 +71,15 @@ window.addEventListener('DOMContentLoaded', async function(){
 
 //Loading geoJson data for gym clubs
         let response = await axios.get('data/CLUB.geojson');
+        let clubCoords = response.data.features;
+        for (let i=0; i<clubCoords.length; i++){
+            console.log (clubCoords[i].geometry.coordinates)
+
+        }
+
         let clubs = L.geoJson(response.data,{
             onEachFeature: function(feature,layer){
-                layer.bindPopup(feature.properties.Club + feature.properties.Address + clubIcon)
+                layer.bindPopup(feature.properties.Club + feature.properties.Address)
             }
         }).addTo(clubCluster)
 
