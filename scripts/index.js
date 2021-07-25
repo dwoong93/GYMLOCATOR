@@ -2,11 +2,13 @@
 //Coordinates for Singapore
 let singapore = [1.3558681517963378, 103.81259782407385];
 //Centre point on first load
-let map = L.map('singapore-map').setView(singapore, 12 ); 
+let map = L.map('singapore-map', {maxBounds: [[1.4181493527121631, 103.97115101277154], [1.2456159021582167, 103.61471399164832]]
 
-let corner1 = L.latLng(1.56073, 104.11475);
-let corner2 = L.latLng(1.16, 103.502);
-bounds = L.latLngBounds(corner1, corner2);
+}).setView([1.3558681517963378, 103.81259782407385], 12 ); 
+
+// let southWest = L.latLng(1.56073, 104.11475);
+// let northEast = L.latLng(1.16, 103.502);
+// let mapBounds = L.latLngBounds(corner1, corner2);
 
 // Tile layer
 L.tileLayer(
@@ -72,6 +74,10 @@ window.addEventListener('DOMContentLoaded', async function(){
 //Loading geoJson data for gym clubs
         let response = await axios.get('data/CLUB.geojson');
         let clubCoords = response.data.features;
+        
+        for (let x=0; x<clubCoords.length; x++){
+            console.log (clubCoords[x].properties.Club)}
+
         for (let i=0; i<clubCoords.length; i++){
             console.log (clubCoords[i].geometry.coordinates)
 
