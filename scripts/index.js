@@ -2,8 +2,8 @@
 //Coordinates for Singapore
 let singapore = [1.3558681517963378, 103.81259782407385];
 //Centre point on first load
-let map = L.map('singapore-map', {maxBounds: [[1.4181493527121631, 103.97115101277154], [1.2456159021582167, 103.61471399164832]]
-
+let map = L.map('singapore-map', {maxBounds: [[1.4181493527121631, 103.97115101277154], 
+    [1.2456159021582167, 103.61471399164832]]
 }).setView([1.3558681517963378, 103.81259782407385], 12 ); 
 
 // let southWest = L.latLng(1.56073, 104.11475);
@@ -116,6 +116,14 @@ window.addEventListener('DOMContentLoaded', async function(){
     L.control.layers(baseLayer, overlays).addTo(map)
     allBusStops.addTo(map);
     allClubs.addTo(map);
+
+
+    let response3 = await axios.get('');
+        let slaLayer = L.geoJson(response3.data,{
+            onEachFeature: function(feature,layer){
+                layer.bindPopup(feature.properties)
+            }
+        }).addTo(map)
 
 //end of async function
 })
