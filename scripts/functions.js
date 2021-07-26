@@ -67,3 +67,5 @@ function zoomOnChange(selectedTown) {
 //let userTownSelection = eventlistener(click,"optionSengkang")
 //if sengkang is selected, map will move to sengkang region
 
+
+

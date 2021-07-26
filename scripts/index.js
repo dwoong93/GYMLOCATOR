@@ -2,9 +2,9 @@
 //Coordinates for Singapore
 let singapore = [1.3558681517963378, 103.81259782407385];
 //Centre point on first load
-let map = L.map('singapore-map', {maxBounds: [[1.4181493527121631, 103.97115101277154], 
-    [1.2456159021582167, 103.61471399164832]]
-}).setView([1.3558681517963378, 103.81259782407385], 12 ); 
+let map = L.map('singapore-map',{maxBounds:[[1.4724179719905892, 104.00802298417915],[1.2113590252812299, 103.61150331088808]] 
+}, {zoomSnap: 0.25}
+).setView([1.3558681517963378, 103.81259782407385],13); 
 
 // let southWest = L.latLng(1.56073, 104.11475);
 // let northEast = L.latLng(1.16, 103.502);
@@ -24,6 +24,8 @@ L.tileLayer(
             'pk.eyJ1IjoiZGFyeWx3b29uZyIsImEiOiJja3I5cDcwMWI0YjE1MnBxaG04ZjQ2MGE4In0.vQSEV1EzN_aerLwJlfmswA'
     }
 ).addTo(map);
+
+
 
 
 //One MapSG Default
@@ -56,10 +58,11 @@ const clubIcon = L.icon({
     iconAnchor: [20, 25]
 })
 
-//Importing of data
+
+//////////////////////////////////Importing of data//////////////////////////////////
 window.addEventListener('DOMContentLoaded', async function(){
 
-
+//////////////////////////////////Gym Clubs//////////////////////////////////////////
 //Layer group for Anytime Fitness Club - All
     let allClubs = L.layerGroup();
 
@@ -92,14 +95,19 @@ window.addEventListener('DOMContentLoaded', async function(){
             outletCoords.push (clubCoords[i].geometry.coordinates)}
         console.log (outletCoords);
 
-// Combining outlet names and coordiantes into key-value pairs
+// Combining outlet names and coordinates into key-value pairs.
+//when "sengkang" is clicked, a for loop will run to search for coordinates of the sites in buangkok, sengkang and punggol area through the Name Key.
+//These coordinates will then be stored into an array that is automated using a function, to highlight a polygon area. 
         let keyValPair = outletCoords.reduce(function(keyValPair,field,index){
             outletCoords[outletNames[index]] = field;
             return keyValPair;
         }, {})
         // console.log(keyValPair);
+
+        
         
 
+////////////////////////BUS STOPS//////////////////////////////////////////
 
 //Layer group for bus stops - All
     let allBusStops = L.layerGroup()
@@ -128,8 +136,35 @@ window.addEventListener('DOMContentLoaded', async function(){
     L.control.layers(baseLayer, overlays).addTo(map)
     allBusStops.addTo(map);
     allClubs.addTo(map);
+    
 
+    let houganglatlng = [1.3600134710418836, 103.88583821543895]
+    let punggollatlng = [1.4070407602268686, 103.90543741220363]
+    let circle = null
 
+    document.getElementById("Hougang-btn").addEventListener("click", function(e){
+        // e.preventDefault()
+        map.setView(houganglatlng,18)
+        if (circle !=null){
+            map.removeLayer(circle)
+        }
+        circle = L.circle(houganglatlng, {radius: 200})
+        map.addLayer(circle)
+        
+
+    })
+
+    document.getElementById("Punggol-btn").addEventListener("click", function(e){
+        // e.preventDefault()
+        map.setView(punggollatlng,18)
+        if (circle !=null){
+            map.removeLayer(circle)
+        }
+        circle = L.circle(punggollatlng, {radius: 200})
+        map.addLayer(circle)
+        
+
+    })
     
 
 //end of async function
