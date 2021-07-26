@@ -3,7 +3,7 @@
 let singapore = [1.3558681517963378, 103.81259782407385];
 //Centre point on first load
 let map = L.map('singapore-map',{maxBounds:[[1.4724179719905892, 104.00802298417915],[1.2113590252812299, 103.61150331088808]] 
-}, {zoomSnap: 0.25}
+}, {zoomDelta: 0, zoomSnap: 0.25}
 ).setView([1.3558681517963378, 103.81259782407385],13); 
 
 // let southWest = L.latLng(1.56073, 104.11475);
@@ -145,9 +145,19 @@ window.addEventListener('DOMContentLoaded', async function(){
     let buangkoklatlng = [1.3839157436675633, 103.87736690869015]
     let circle = null
 
+    document.getElementById("ShowAll-btn").addEventListener("click", function(e){
+        // e.preventDefault()
+        map.flyTo([1.3558681517963378, 103.81259782407385],12)
+        if (circle !=null){
+            map.removeLayer(circle)
+        }
+        
+        
+
+    })
     document.getElementById("Hougang-btn").addEventListener("click", function(e){
         // e.preventDefault()
-        map.setView(houganglatlng,15)
+        map.flyTo(houganglatlng,15)
         if (circle !=null){
             map.removeLayer(circle)
         }
@@ -159,7 +169,7 @@ window.addEventListener('DOMContentLoaded', async function(){
 
     document.getElementById("Punggol-btn").addEventListener("click", function(e){
         // e.preventDefault()
-        map.setView(punggollatlng,15)
+        map.flyTo(punggollatlng,15)
         if (circle !=null){
             map.removeLayer(circle)
         }
@@ -171,7 +181,7 @@ window.addEventListener('DOMContentLoaded', async function(){
 
     document.getElementById("Sengkang-btn").addEventListener("click", function(e){
         // e.preventDefault()
-        map.setView(sengkanglatlng,15)
+        map.flyTo(sengkanglatlng,15)
         if (circle !=null){
             map.removeLayer(circle)
         }
@@ -183,7 +193,7 @@ window.addEventListener('DOMContentLoaded', async function(){
 
     document.getElementById("Buangkok-btn").addEventListener("click", function(e){
         // e.preventDefault()
-        map.setView(buangkoklatlng,15)
+        map.flyTo(buangkoklatlng,15)
         if (circle !=null){
             map.removeLayer(circle)
         }
@@ -195,7 +205,7 @@ window.addEventListener('DOMContentLoaded', async function(){
 
     document.getElementById("Serangoon-btn").addEventListener("click", function(e){
         // e.preventDefault()
-        map.setView(serangoonlatlng,15)
+        map.flyTo(serangoonlatlng,15)
         if (circle !=null){
             map.removeLayer(circle)
         }
