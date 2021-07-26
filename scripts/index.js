@@ -74,20 +74,31 @@ window.addEventListener('DOMContentLoaded', async function(){
 //Loading geoJson data for gym clubs
         let response = await axios.get('data/CLUB.geojson');
         let clubCoords = response.data.features;
-        
-        for (let x=0; x<clubCoords.length; x++){
-            console.log (clubCoords[x].properties.Club)}
-
-        for (let i=0; i<clubCoords.length; i++){
-            console.log (clubCoords[i].geometry.coordinates)
-
-        }
-
         let clubs = L.geoJson(response.data,{
             onEachFeature: function(feature,layer){
                 layer.bindPopup(feature.properties.Club + feature.properties.Address)
             }
         }).addTo(clubCluster)
+
+//getting outlet names and putting them into an array
+        let outletNames = [];
+        for (let x=0; x<clubCoords.length; x++){
+            outletNames.push (clubCoords[x].properties.Club)}
+        console.log (outletNames);   
+
+//getting outlet coordinates and putting them into an array       
+        let outletCoords = [];
+        for (let i=0; i<clubCoords.length; i++){
+            outletCoords.push (clubCoords[i].geometry.coordinates)}
+        console.log (outletCoords);
+
+// Combining outlet names and coordiantes into key-value pairs
+        let keyValPair = outletCoords.reduce(function(keyValPair,field,index){
+            outletCoords[outletNames[index]] = field;
+            return keyValPair;
+        }, {})
+        // console.log(keyValPair);
+        
 
 
 //Layer group for bus stops - All
