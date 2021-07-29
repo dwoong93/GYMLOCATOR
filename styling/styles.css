@@ -1,4 +1,8 @@
 #singapore-map {
-    height: 98vh;
+    height: 93.5vh;
     width: 100%
+}
+
+.navbar{
+    background-color: #8d42f5;
 }
