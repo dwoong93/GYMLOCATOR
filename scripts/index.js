@@ -6,48 +6,51 @@ let map = L.map('singapore-map', {
     zoomSnap: 0.25, minZoom: 12.25, maxBounds: [[1.4724179719905892, 104.00802298417915], [1.2113590252812299, 103.61150331088808]]
 }).setView([1.3558681517963378, 103.81259782407385], 12.25);
 
-// let southWest = L.latLng(1.56073, 104.11475);
-// let northEast = L.latLng(1.16, 103.502);
-// let mapBounds = L.latLngBounds(corner1, corner2);
-
-// Tile layer
-L.tileLayer(
-    'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',
-    {
-        attribution:
-            'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
-        maxZoom: 18,
-        id: 'mapbox/streets-v11',
-        tileSize: 512,
-        zoomOffset: -1,
-        accessToken:
-            'pk.eyJ1IjoiZGFyeWx3b29uZyIsImEiOiJja3I5cDcwMWI0YjE1MnBxaG04ZjQ2MGE4In0.vQSEV1EzN_aerLwJlfmswA'
-    }
-).addTo(map);
-
-
-
+// // Tile layer
+// L.tileLayer(
+//     'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',
+//     {
+//         attribution:
+//             'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
+//         maxZoom: 18,
+//         id: 'mapbox/streets-v11',
+//         tileSize: 512,
+//         zoomOffset: -1,
+//         accessToken:
+//             'pk.eyJ1IjoiZGFyeWx3b29uZyIsImEiOiJja3I5cDcwMWI0YjE1MnBxaG04ZjQ2MGE4In0.vQSEV1EzN_aerLwJlfmswA'
+//     }
+// ).addTo(map);
 
 //One MapSG Default
-let defaultMap = L.layerGroup();
+// let defaultMap = L.layerGroup();
 
-let OneMapSG_Default = L.tileLayer('https://maps-{s}.onemap.sg/v3/Default/{z}/{x}/{y}.png', {
+let OneMapSG = L.tileLayer('https://maps-{s}.onemap.sg/v3/Default/{z}/{x}/{y}.png', {
     minZoom: 11,
     maxZoom: 18,
     bounds: [[1.56073, 104.11475], [1.16, 103.502]],
     attribution: '<img src="https://docs.onemap.sg/maps/images/oneMap64-01.png" style="height:20px;width:20px;"/> New OneMap | Map data &copy; contributors, <a href="http://SLA.gov.sg">Singapore Land Authority</a>'
-}).addTo(defaultMap)
+}).addTo(map)
 
 //One MapSG Night
 
-let darkModeMap = L.layerGroup();
+// let darkModeMap = L.layerGroup();
 
-let OneMapSG_Night = L.tileLayer('https://maps-{s}.onemap.sg/v3/Night/{z}/{x}/{y}.png', {
+let darkModeMap = L.tileLayer('https://maps-{s}.onemap.sg/v3/Night/{z}/{x}/{y}.png', {
     minZoom: 11,
     maxZoom: 18,
     bounds: [[1.56073, 104.11475], [1.16, 103.502]],
     attribution: '<img src="https://docs.onemap.sg/maps/images/oneMap64-01.png" style="height:20px;width:20px;"/> New OneMap | Map data &copy; contributors, <a href="http://SLA.gov.sg">Singapore Land Authority</a>'
-}).addTo(darkModeMap)
+})
+
+// Radio Button Control for map views
+
+    //onemap
+document.getElementById("defaultmodeRadio-btn").addEventListener("click", function (e) {
+    map.addLayer(OneMapSG).addTo(map)})
+    //darkmode
+document.getElementById("darkmodeRadio-btn").addEventListener("click", function (e) {
+    map.addLayer(darkModeMap).addTo(map)})
+
 
 
 
@@ -124,10 +127,10 @@ window.addEventListener('DOMContentLoaded', async function () {
 
 
     //Layer control
-    let baseLayer = {
-        'OneMapSG': defaultMap,
-        'Dark Mode': darkModeMap
-    }
+    // let baseLayer = {
+    //     'OneMapSG': defaultMap,
+    //     'Dark Mode': darkModeMap
+    // }
     let overlays = {
         // 'Dark Mode': darkModeMap
         'Show All Clubs': allClubs,
@@ -135,17 +138,11 @@ window.addEventListener('DOMContentLoaded', async function () {
 
     }
 
-    L.control.layers(baseLayer, overlays).addTo(map)
-    allBusStops.addTo(map);
-    allClubs.addTo(map);
+    L.control.layers(null,overlays).addTo(map)
+    allBusStops.addTo(map); //default checked
+    allClubs.addTo(map);    //default checked
 
 
-
-
-    let DarkmodeMap = L.tileLayer('https://maps-{s}.onemap.sg/v3/Night/{z}/{x}/{y}.png', {
-        minZoom: 11, maxZoom: 18, bounds: [[1.56073, 104.11475], [1.16, 103.502]], 
-        attribution: '<img src="https://docs.onemap.sg/maps/images/oneMap64-01.png" style="height:20px;width:20px;"/> New OneMap | Map data &copy; contributors, <a href="http://SLA.gov.sg">Singapore Land Authority</a>'
-    })
 
     let houganglatlng = [1.372135151181164, 103.8859292830705]
     let punggollatlng = [1.401469018441145, 103.90283016626528]
@@ -153,7 +150,6 @@ window.addEventListener('DOMContentLoaded', async function () {
     let sengkanglatlng = [1.3886648098226932, 103.8939135551916]
     let buangkoklatlng = [1.3839157436675633, 103.87736690869015]
     let circle = null
-    let Darkmode = null
 
     document.getElementById("ShowAll-btn").addEventListener("click", function (e) {
         // e.preventDefault()
@@ -219,24 +215,13 @@ window.addEventListener('DOMContentLoaded', async function () {
         if (circle != null) {
             map.removeLayer(circle)
         }
-        circle = L.circle(serangoonlatlng, { radius: 1700, fillColor:"#7e3ff2", color: "yellow", fillOpacity:0.5})
+        circle = L.circle(serangoonlatlng, { radius: 1700, fillColor: "#7e3ff2", color: "yellow", fillOpacity: 0.5 })
         map.addLayer(circle)
 
 
     })
 
-
-    document.getElementById("darkmodebtn").addEventListener("click", function (e) {
-        // e.preventDefault()
-        if (DarkmodeMap != null) {
-            OneMapSG_Default.addTo(defaultMap)
-        }
-        map.addLayer(DarkmodeMap).addTo(defaultMap)
-    })
-
-
     
-
     
 
 
@@ -251,6 +236,11 @@ window.addEventListener('DOMContentLoaded', async function () {
 
 
 
-        //end of async function
-    })
+
+
+
+
+
+    //end of async function
+})
 
