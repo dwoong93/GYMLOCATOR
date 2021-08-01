@@ -18,67 +18,77 @@
 </head>
 
 <body>
-  <!--Navbar-->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="images\clublogo.png" alt="Gym Locator Logo" width="30" height="30" class="d-inline-block align-text-top"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+  <div class="container-fluid">
+    <div class="row">
+      <!--Navbar-->
+      <div class="col-2">
+        <nav class="navbar navbar-expand d-flex flex-column align-item-start">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="images\clublogo.png" alt="Gym Locator Logo" width="30" height="30" class="d-inline-block align-text-top"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-          <!-- list for Towns -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Town
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" id="ShowAll-btn">All Clubs</a></li>
-              <li><a class="dropdown-item" id="Hougang-btn">Hougang</a></li>
-              <li><a class="dropdown-item" id="Punggol-btn">Punggol</a></li>
-              <li><a class="dropdown-item" id="Sengkang-btn">Sengkang</a></li>
-              <li><a class="dropdown-item" id="Buangkok-btn">Buangkok</a></li>
-              <li><a class="dropdown-item" id="Serangoon-btn">Serangoon</a></li>
+                <!-- list for Towns -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Town
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" id="ShowAll-btn">All Clubs</a></li>
+                    <li><a class="dropdown-item" id="Hougang-btn">Hougang</a></li>
+                    <li><a class="dropdown-item" id="Punggol-btn">Punggol</a></li>
+                    <li><a class="dropdown-item" id="Sengkang-btn">Sengkang</a></li>
+                    <li><a class="dropdown-item" id="Buangkok-btn">Buangkok</a></li>
+                    <li><a class="dropdown-item" id="Serangoon-btn">Serangoon</a></li>
 
-            </ul>
-          </li>
+                  </ul>
+                </li>
 
-          <!-- list for map views -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Map Views
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="defaultmodeRadio-btn" checked>
-                <label class="form-check-label" for="flexRadioDefault2">Default Mode</label></li>
+                <!-- list for map views -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Map Views
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="defaultmodeRadio-btn" checked>
+                      <label class="form-check-label" for="flexRadioDefault2">Default Mode</label></li>
 
-              <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="darkmodeRadio-btn">
-                <label class="form-check-label" for="flexRadioDefault1">Dark Mode</label></li>
+                    <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="darkmodeRadio-btn">
+                      <label class="form-check-label" for="flexRadioDefault1">Dark Mode</label></li>
 
-              <li><a class="dropdown-item" id="Serangoon-btn">Serangoon</a></li>
+                    <li><a class="dropdown-item" id="Serangoon-btn">Serangoon</a></li>
 
-            </ul>
-          </li>
+                  </ul>
+                </li>
 
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+              </ul>
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!--Map-->
+      <div class="col-10">
+        <div class="container-fluid">
+          <div id="singapore-map"></div>
+        </div>
       </div>
     </div>
-  </nav>
-
+  </div>
+  
   <!---->
 
-  <div class="container-fluid">
-    <div id="singapore-map"></div>
-  </div>
+  
 
 
   <!--Leaflet javascript-->

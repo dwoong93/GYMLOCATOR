@@ -91,12 +91,12 @@ window.addEventListener('DOMContentLoaded', async function () {
     for (let x = 0; x < clubCoords.length; x++) {
         outletNames.push(clubCoords[x].properties.Club)
     }
-    console.log(outletNames);
+    // console.log(outletNames);
 
     //getting outlet coordinates and putting them into an array       
     let outletCoords = [];
     for (let i = 0; i < clubCoords.length; i++) {
-        outletCoords.push(clubCoords[i].geometry.coordinates)
+        outletCoords.push([clubCoords[i].geometry.coordinates[1],clubCoords[i].geometry.coordinates[0]])
     }
     console.log(outletCoords);
 
@@ -105,9 +105,7 @@ window.addEventListener('DOMContentLoaded', async function () {
     //These coordinates will then be stored into an array that is automated using a function, to highlight a polygon area. 
     let keyValPair = outletCoords.reduce(function (keyValPair, field, index) {
         outletCoords[outletNames[index]] = field;
-        return keyValPair;
     }, {})
-    // console.log(keyValPair);
 
 
 
