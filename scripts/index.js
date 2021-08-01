@@ -98,7 +98,6 @@ window.addEventListener('DOMContentLoaded', async function () {
     for (let i = 0; i < clubCoords.length; i++) {
         outletCoords.push([clubCoords[i].geometry.coordinates[1],clubCoords[i].geometry.coordinates[0]])
     }
-    console.log(outletCoords);
 
     // Combining outlet names and coordinates into key-value pairs.
     //when "sengkang" is clicked, a for loop will run to search for coordinates of the sites in buangkok, sengkang and punggol area through the Name Key.
@@ -107,7 +106,12 @@ window.addEventListener('DOMContentLoaded', async function () {
         outletCoords[outletNames[index]] = field;
     }, {})
 
+    console.log(outletCoords);
 
+    for (let y=0; y< outletCoords.length; y++){
+        if (y == "Ang Mo Kio"){
+            console.log (y)
+        }}
 
 
     ////////////////////////BUS STOPS//////////////////////////////////////////
