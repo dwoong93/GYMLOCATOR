@@ -57,19 +57,32 @@
                     Map Style
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="defaultmodeRadio-btn" checked>
-                      <label class="form-check-label" for="flexRadioDefault2">Default Mode</label></li>
+                    <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="OneMapLightRadio-btn" checked>
+                      <label class="form-check-label" for="flexRadioDefault2">One Map (Default)</label></li>
+
+                    <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="OSMRadio-btn">
+                      <label class="form-check-label" for="flexRadioDefault2">Open Street Map</label></li>
 
                     <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="darkmodeRadio-btn">
                       <label class="form-check-label" for="flexRadioDefault1">Dark Mode</label></li>
                   </ul>
                 </li>
+                <!-- list for map views -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Map Filters
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><input class="form-check-input" type="checkbox" name="ShowClubCheckbox" id="ShowClub-Checkbox" checked>
+                      <label class="form-check-label" for="ShowClubCheckbox">Show All Clubs</label></li>
+
+                    <li><input class="form-check-input" type="checkbox" name="ShowBusStops" id="ShowBusStops-Checkbox">
+                      <label class="form-check-label" for="ShowBusStops">Show Bus Stops</label></li>
+                  </ul>
+                </li>
 
               </ul>
-              <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
             </div>
           </div>
         </nav>
