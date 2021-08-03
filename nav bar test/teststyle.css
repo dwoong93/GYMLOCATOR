@@ -1,8 +1,18 @@
-#singapore-map {
-    height: 100vh;
+/* import font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+/* Smooth Scroll for future use */
+html {
+    scroll-behavior: smooth;
 }
 
-.navbar{
-    background-color: #8d42f5;
-    height: 100vh;
+#singapore-map {
+    height: 99vh;
+    width: 83vw;
+}
+
+.sidebar{
+    height: 99vh;
+    width: 20vw;
+    background-color: #f5b642;
 }

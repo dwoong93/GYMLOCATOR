@@ -4,10 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gym Locator</title>
+  <title>TEST</title>
   <!--Bootstrap CSS-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   <!--Leaflet stylesheet-->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
@@ -18,85 +19,21 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="row">
-      <!--Navbar-->
-      <div class="col-sm">
-        <nav class="navbar navbar-expand d-flex flex-column align-item-start">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-              <img src="testclublogo.png" alt="Gym Locator Logo" width="30" height="30" class="d-inline-block align-text-top"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<div class="container-fluid">
+    <nav class="sidebar sidebar-expand-lg sidebar-light bg-light">
+        <button class="sidebar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="toggle-sidebar-icon">
+                <i class="bi bi-arrow-right-circle-fill"></i>
+            </span>
+        </button>
 
-                <!-- list for Towns -->
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Town
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" id="ShowAll-btn">All Clubs</a></li>
-                    <li><a class="dropdown-item" id="Hougang-btn">Hougang</a></li>
-                    <li><a class="dropdown-item" id="Punggol-btn">Punggol</a></li>
-                    <li><a class="dropdown-item" id="Sengkang-btn">Sengkang</a></li>
-                    <li><a class="dropdown-item" id="Buangkok-btn">Buangkok</a></li>
-                    <li><a class="dropdown-item" id="Serangoon-btn">Serangoon</a></li>
-
-                  </ul>
-                </li>
-
-                <!-- list for map views -->
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Map Style
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="OneMapLightRadio-btn" checked>
-                      <label class="form-check-label" for="flexRadioDefault2">One Map (Default)</label></li>
-
-                    <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="OSMRadio-btn">
-                      <label class="form-check-label" for="flexRadioDefault2">Open Street Map</label></li>
-
-                    <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="darkmodeRadio-btn">
-                      <label class="form-check-label" for="flexRadioDefault1">Dark Mode</label></li>
-                  </ul>
-                </li>
-                <!-- list for map views -->
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Map Filters
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><input class="form-check-input" type="checkbox" name="ShowClubCheckbox" id="ShowClub-Checkbox" checked>
-                      <label class="form-check-label" for="ShowClubCheckbox">Show All Clubs</label></li>
-
-                    <li><input class="form-check-input" type="checkbox" name="ShowBusStops" id="ShowBusStops-Checkbox">
-                      <label class="form-check-label" for="ShowBusStops">Show Bus Stops</label></li>
-                  </ul>
-                </li>
-
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-      <!--Map-->
-      <div class="col-lg">
-        <div class="container-fluid">
-          <div id="singapore-map"></div>
+    </nav>
+    <section id="map-section">
+        <div class="block">
+            <div id="singapore-map"></div>
         </div>
-      </div>
-    </div>
-  </div>
-  
-  <!---->
+    </section>
+</div>
 
   
 
