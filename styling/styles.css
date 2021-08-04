@@ -1,8 +1,4 @@
 #singapore-map {
     height: 100vh;
-}
-
-.navbar{
-    background-color: #8d42f5;
-    height: 100vh;
+    border-style: solid;
 }
