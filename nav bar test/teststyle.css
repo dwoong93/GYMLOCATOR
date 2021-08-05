@@ -11,8 +11,6 @@ html {
     width: 83vw;
 }
 
-.sidebar{
-    height: 99vh;
-    width: 20vw;
-    background-color: #f5b642;
+.offcanvas {
+    height: 100vh;
 }
