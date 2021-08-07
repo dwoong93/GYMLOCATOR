@@ -24,17 +24,19 @@
   <div>
 
   <!--Navbar-->
-  <nav class="navbar navbar-expand-lg align-item-start navbar-danger">
+  <nav class="navbar fixed-top navbar-expand-lg align-item-start">
     <!--<nav class="navbar navbar-expand d-flex flex-column align-item-start ">-->
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-        <img src="images\clublogo.png" alt="Gym Locator Logo" width="30" height="30"
-          class="d-inline-block align-text-top"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        <img src="images\running man logo.png" alt="Gym Locator Logo" width="30" height="30"
+          class="d-inline-block align-text-top">
+          Gym Locator 
+        </a>
+      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
           <!-- list for Towns -->
@@ -43,7 +45,7 @@
               aria-expanded="false">
               Town
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" id="ShowAll-btn">All Clubs</a></li>
               <li><a class="dropdown-item" id="Hougang-btn">Hougang</a></li>
               <li><a class="dropdown-item" id="Punggol-btn">Punggol</a></li>
@@ -51,7 +53,7 @@
               <li><a class="dropdown-item" id="Buangkok-btn">Buangkok</a></li>
               <li><a class="dropdown-item" id="Serangoon-btn">Serangoon</a></li>
 
-            </ul>
+            </ul> -->
           </li>
 
           <!-- list for map views -->
@@ -91,12 +93,56 @@
             </ul>
           </li>
 
+          <!--TEST----------------------------------------------------------------------------------------------------------------------------------->
+          <nav>
+            <!--tab 01-->
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button"
+                role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
+
+              <!--tab 02-->
+              <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button"
+                role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
+
+              <!--tab 03-->
+              <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button"
+                role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+
+
+            </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+
+              <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">...
+                <div>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" id="ShowAll-btn">All Clubs</a></li>
+                    <li><a class="dropdown-item" id="Hougang-btn">Hougang</a></li>
+                    <li><a class="dropdown-item" id="Punggol-btn">Punggol</a></li>
+                    <li><a class="dropdown-item" id="Sengkang-btn">Sengkang</a></li>
+                    <li><a class="dropdown-item" id="Buangkok-btn">Buangkok</a></li>
+                    <li><a class="dropdown-item" id="Serangoon-btn">Serangoon</a></li>
+      
+                  </ul>
+                </div>
+              </div>
+
+
+              <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+
+
+              <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+
+            </div>
+          
+          <!--END OF TEST----------------------------------------------------------------------------------------------------------------------------->
+
         </ul>
       </div>
     </div>
   </nav>
   <!--Map-->
-  <div class="container-fluid">
+  <div class="container-10">
     <div id="singapore-map"></div>
   </div>     
  

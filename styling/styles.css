@@ -1,4 +1,9 @@
 #singapore-map {
     height: 100vh;
-    border-style: solid;
+}
+body {background-color: coral;}
+.navbar {
+    background-color:rgba(20, 59, 54, 0.5);
+    width: 30vw;
+    
 }
