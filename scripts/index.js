@@ -120,6 +120,39 @@ window.addEventListener('DOMContentLoaded', async function () {
     })
 
 
+
+
+
+
+
+
+////////////////////////WEATHER//////////////////////////////////////////
+    //Loading geoJson data for weather
+    // let wCoords = []
+    let response3 = await axios.get('https://api.data.gov.sg/v1/environment/2-hour-weather-forecast?date=2021-08-09');
+    let weather = response3
+    for (let w=0; w<weather.data.area_metadata.length; w++ ){
+        // wCoords.push([response3.data.area_metadata[0].label_location.latitude,response3.data.area_metadata[0].label_location.longitude])
+        L.marker([weather.data.area_metadata[w].label_location.latitude, weather.data.area_metadata[w].label_location.longitude]).addTo(map)
+    }
+
+
+
+    // console.log (wCoords[2])
+    // // console.log(wCoords.length)
+    // for (let nayeon=0; nayeon<wCoords.length; nayeon++){
+    //     L.marker(wCoords[nayeon]).addTo(map)
+    //     console.log(wCoords[nayeon])
+    // }
+    
+
+    // console.log (response3.data.area_metadata.length)
+    // console.log (response3.data.area_metadata[0].label_location.latitude)
+    
+        
+
+
+
     //Toggle for Clubs
 document.getElementById("ShowClub-Checkbox").addEventListener("click", function (e) {
     if(this.checked) map.addLayer(clubCluster)
@@ -131,6 +164,11 @@ document.getElementById("ShowBusStops-Checkbox").addEventListener("click", funct
     else map.removeLayer(busLayer)
 })
 
+//Toggle for Weather
+document.getElementById("ShowWeather-Checkbox").addEventListener("click", function (e) {
+    if(this.checked) map.addLayer(weather)
+    else map.removeLayer(weather)
+})
 
 
 
