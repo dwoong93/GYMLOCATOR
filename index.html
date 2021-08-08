@@ -14,7 +14,17 @@
     crossorigin="" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="styling/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!--Google Font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -24,27 +34,26 @@
   <div>
 
   <!--Navbar-->
-  <nav class="navbar fixed-top navbar-expand-lg align-item-start">
-    <!--<nav class="navbar navbar-expand d-flex flex-column align-item-start ">-->
+  <!-- <nav class="navbar fixed-top navbar-expand-lg align-item-start">
+    <nav class="navbar navbar-expand d-flex flex-column align-item-start ">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-        <img src="images\running man logo.png" alt="Gym Locator Logo" width="30" height="30"
-          class="d-inline-block align-text-top">
-          Gym Locator 
-        </a>
+        <img src="images\running man logo.png" alt="Gym Locator Logo" width="30" height="30" class="d-inline-block align-text-top">
+        Gym Locator
+      </a> -->
       <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0"> -->
 
           <!-- list for Towns -->
-          <li class="nav-item dropdown">
+          <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
               Town
-            </a>
+            </a> -->
             <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" id="ShowAll-btn">All Clubs</a></li>
               <li><a class="dropdown-item" id="Hougang-btn">Hougang</a></li>
@@ -54,10 +63,10 @@
               <li><a class="dropdown-item" id="Serangoon-btn">Serangoon</a></li>
 
             </ul> -->
-          </li>
+          <!-- </li> -->
 
           <!-- list for map views -->
-          <li class="nav-item dropdown">
+          <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
               Map Style
@@ -75,9 +84,9 @@
                 <label class="form-check-label" for="flexRadioDefault1">Dark Mode</label>
               </li>
             </ul>
-          </li>
+          </li> -->
           <!-- list for map views -->
-          <li class="nav-item dropdown">
+          <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
               Map Filters
@@ -91,56 +100,79 @@
                 <label class="form-check-label" for="ShowBusStops">Show Bus Stops</label>
               </li>
             </ul>
-          </li>
+          </li> -->
 
-          <!--TEST----------------------------------------------------------------------------------------------------------------------------------->
-          <nav>
-            <!--tab 01-->
-            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-              <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button"
-                role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
-
-              <!--tab 02-->
-              <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button"
-                role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
-
-              <!--tab 03-->
-              <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button"
-                role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
-
-
-            </div>
-            </nav>
-            <div class="tab-content" id="nav-tabContent">
-
-              <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">...
-                <div>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" id="ShowAll-btn">All Clubs</a></li>
-                    <li><a class="dropdown-item" id="Hougang-btn">Hougang</a></li>
-                    <li><a class="dropdown-item" id="Punggol-btn">Punggol</a></li>
-                    <li><a class="dropdown-item" id="Sengkang-btn">Sengkang</a></li>
-                    <li><a class="dropdown-item" id="Buangkok-btn">Buangkok</a></li>
-                    <li><a class="dropdown-item" id="Serangoon-btn">Serangoon</a></li>
-      
-                  </ul>
-                </div>
-              </div>
-
-
-              <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
-
-
-              <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
-
-            </div>
           
-          <!--END OF TEST----------------------------------------------------------------------------------------------------------------------------->
+          
+          <!--TEST----------------------------------------------------------------------------------------------------------------------------------->
+  <a class="navbar-brand fixed-top" href="#">
+    <img src="images\running man logo.png" alt="Gym Locator Logo" width="100" height="100"
+      class="d-inline-block align-text-top"></a>
+  <!--tab 01-->
+  
+  <div class="nav nav-tabs fixed-bottom" id="nav-tab-towns" role="tablist">
+    <button class="nav-link" id="nav-towns-tab-btn" data-bs-toggle="tab" data-bs-target="#nav-towns" type="button"
+      role="tab" aria-controls="nav-home" aria-selected="true">Towns</button>
 
-        </ul>
-      </div>
+  <!--tab 02-->
+    <button class="nav-link" id="nav-tab-filters" data-bs-toggle="tab" data-bs-target="#nav-filters" type="button"
+      role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
+
+  <!--tab 03-->
+    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-style" type="button"
+      role="tab" aria-controls="nav-contact" aria-selected="false">Map Style</button>
+
+  </div>
+  
+  
+  <div class="tab-content fixed-top">
+    <div class="tab-pane active" id="nav-towns"> <!--Towns-->
+      <h5>Select Town</h5>
+      <ul class="list-unstyled">
+        <li><a class="dropdown-item" id="ShowAll-btn">All Clubs</a></li>
+        <li><a class="dropdown-item" id="Hougang-btn">Hougang</a></li>
+        <li><a class="dropdown-item" id="Punggol-btn">Punggol</a></li>
+        <li><a class="dropdown-item" id="Sengkang-btn">Sengkang</a></li>
+        <li><a class="dropdown-item" id="Buangkok-btn">Buangkok</a></li>
+        <li><a class="dropdown-item" id="Serangoon-btn">Serangoon</a></li>
+      </ul>
     </div>
-  </nav>
+
+    <div class="tab-pane" id="nav-filters"> <!--filters-->
+      <h5>This is for map filters</h5>
+      <ul class="list-unstyled">
+        <li><input class="form-check-input" type="checkbox" name="ShowClubCheckbox" id="ShowClub-Checkbox" checked>
+          <label class="form-check-label" for="ShowClubCheckbox">Show All Clubs</label>
+        </li>
+        <li><input class="form-check-input" type="checkbox" name="ShowBusStops" id="ShowBusStops-Checkbox">
+          <label class="form-check-label" for="ShowBusStops">Show Bus Stops</label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tab-pane" id="nav-style"> <!--style-->
+      <h5>This is for map styles</h5>
+      <ul class="list-unstyled">
+        <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="OneMapLightRadio-btn" checked>
+          <label class="form-check-label" for="flexRadioDefault2">One Map (Default)</label>
+        </li>
+
+        <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="OSMRadio-btn">
+          <label class="form-check-label" for="flexRadioDefault2">Open Street Map</label>
+        </li>
+
+        <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="darkmodeRadio-btn">
+          <label class="form-check-label" for="flexRadioDefault1">Dark Mode</label>
+        </li>
+      </ul>
+    </div>
+  </div>
+<!--END OF TEST----------------------------------------------------------------------------------------------------------------------------->
+
+        <!-- </ul> -->
+      <!-- </div> -->
+    <!-- </div> -->
+  <!-- </nav> -->
   <!--Map-->
   <div class="container-10">
     <div id="singapore-map"></div>

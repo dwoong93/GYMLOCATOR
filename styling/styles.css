@@ -1,9 +1,37 @@
 #singapore-map {
     height: 100vh;
 }
-body {background-color: coral;}
-.navbar {
-    background-color:rgba(20, 59, 54, 0.5);
-    width: 30vw;
-    
+
+body {background-color: coral;
 }
+
+.navbar-brand {background-color:transparent;
+    padding-left: 50px;
+
+}
+
+.nav {
+    width: 400px;
+    margin-bottom: 450px;
+    background-color: rgba(201, 251, 255, 0.8);
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    color:white;
+    border-top-right-radius: 05px;
+    border-bottom-right-radius: 05px;
+}
+
+.tab-content{
+
+    width: 400px;
+    margin-top: 490px;
+    padding-left: 20px;
+    background-color: rgba(201, 251, 255, 0.8);
+    font-family: 'Rubik', sans-serif;
+    border-top-right-radius: 05px;
+    border-bottom-right-radius: 05px;
+}
+.tab-pane{
+    list-style-type: none;
+}
+
