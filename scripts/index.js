@@ -128,22 +128,26 @@ window.addEventListener('DOMContentLoaded', async function () {
 
 ////////////////////////WEATHER//////////////////////////////////////////
     //Loading geoJson data for weather
-    // let wCoords = []
+    let wCoords = []
     let Wweather = L.layerGroup()
     let response3 = await axios.get('https://api.data.gov.sg/v1/environment/2-hour-weather-forecast?date=2021-08-09');
     let weather = response3
     for (let w=0; w<weather.data.area_metadata.length; w++ ){
         // wCoords.push([response3.data.area_metadata[0].label_location.latitude,response3.data.area_metadata[0].label_location.longitude])
-        let weatherPins = L.marker([weather.data.area_metadata[w].label_location.latitude, weather.data.area_metadata[w].label_location.longitude]).bindPopup(weather.data.area_metadata[w].name).addTo(Wweather);
+        L.marker([weather.data.area_metadata[w].label_location.latitude, weather.data.area_metadata[w].label_location.longitude]).bindPopup(weather.data.area_metadata[w].name).addTo(Wweather);
+        // wCoords.push([weather.data.area_metadata[w].label_location.latitude, weather.data.area_metadata[w].label_location.longitude])//to combine with response 3 weather status
         
         }
-    // for (let b=0; b<weather.data.area_metadata.length; b++ ){
-    //     // wCoords.push([response3.data.area_metadata[0].label_location.latitude,response3.data.area_metadata[0].label_location.longitude])
-    //     L.marker([weather.data.area_metadata[w].label_location.latitude, weather.data.area_metadata[w].label_location.longitude]).addTo(Wweather);
-        
-    //     }
+
+
+
+    //to create popup and then addTo weatherPins    
+    for (let b=0; b<weather.data.items[0].forecasts.length; b++ ){
+        // console.log(weather.data.items[b])
+        console.log(weather.data.items[0].forecasts[b])
+        }
     
-    
+    // console.log(weather.data.items[0].forecasts[1])
 
 
 
