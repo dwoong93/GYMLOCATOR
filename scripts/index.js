@@ -129,12 +129,21 @@ window.addEventListener('DOMContentLoaded', async function () {
 ////////////////////////WEATHER//////////////////////////////////////////
     //Loading geoJson data for weather
     // let wCoords = []
+    let Wweather = L.layerGroup()
     let response3 = await axios.get('https://api.data.gov.sg/v1/environment/2-hour-weather-forecast?date=2021-08-09');
     let weather = response3
     for (let w=0; w<weather.data.area_metadata.length; w++ ){
         // wCoords.push([response3.data.area_metadata[0].label_location.latitude,response3.data.area_metadata[0].label_location.longitude])
-        L.marker([weather.data.area_metadata[w].label_location.latitude, weather.data.area_metadata[w].label_location.longitude]).addTo(map)
-    }
+        let weatherPins = L.marker([weather.data.area_metadata[w].label_location.latitude, weather.data.area_metadata[w].label_location.longitude]).bindPopup(weather.data.area_metadata[w].name).addTo(Wweather);
+        
+        }
+    // for (let b=0; b<weather.data.area_metadata.length; b++ ){
+    //     // wCoords.push([response3.data.area_metadata[0].label_location.latitude,response3.data.area_metadata[0].label_location.longitude])
+    //     L.marker([weather.data.area_metadata[w].label_location.latitude, weather.data.area_metadata[w].label_location.longitude]).addTo(Wweather);
+        
+    //     }
+    
+    
 
 
 
@@ -166,8 +175,8 @@ document.getElementById("ShowBusStops-Checkbox").addEventListener("click", funct
 
 //Toggle for Weather
 document.getElementById("ShowWeather-Checkbox").addEventListener("click", function (e) {
-    if(this.checked) map.addLayer(weather)
-    else map.removeLayer(weather)
+    if(this.checked) map.addLayer(Wweather)
+    else map.removeLayer(Wweather)
 })
 
 
