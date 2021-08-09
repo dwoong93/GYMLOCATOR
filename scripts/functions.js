@@ -64,3 +64,5 @@ let houganglatlng = [1.372135151181164, 103.8859292830705]
         map.addLayer(circle)
     })
 
+//Date Time
+console.log(moment())
