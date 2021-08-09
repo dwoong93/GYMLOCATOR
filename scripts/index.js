@@ -126,41 +126,54 @@ window.addEventListener('DOMContentLoaded', async function () {
 
 
 
-////////////////////////WEATHER//////////////////////////////////////////
-    //Loading geoJson data for weather
+// ////////////////////////WEATHER//////////////////////////////////////////
+//     //Loading geoJson data for weather
     let wCoords = []
-    let Wweather = L.layerGroup()
-    let response3 = await axios.get('https://api.data.gov.sg/v1/environment/2-hour-weather-forecast?date=2021-08-09');
+    let weatherLayer = L.layerGroup()
+    let response3 = await axios.get('https://api.data.gov.sg/v1/environment/2-hour-weather-forecast');
     let weather = response3
+    let blah= weather.data.items[0]
     for (let w=0; w<weather.data.area_metadata.length; w++ ){
-        // wCoords.push([response3.data.area_metadata[0].label_location.latitude,response3.data.area_metadata[0].label_location.longitude])
-        L.marker([weather.data.area_metadata[w].label_location.latitude, weather.data.area_metadata[w].label_location.longitude]).bindPopup(weather.data.area_metadata[w].name).addTo(Wweather);
-        // wCoords.push([weather.data.area_metadata[w].label_location.latitude, weather.data.area_metadata[w].label_location.longitude])//to combine with response 3 weather status
+        let weatherPoint = (weather.data.area_metadata[w]);
+        // console.log (weatherPoint)
+    }
+
+    for (let b=0; b<blah.forecasts.length; b++){
+        console.log(blah.forecasts[b])}
+    
         
-        }
+        
+
+        
+        
+        
+        
+        // L.marker([weather.data.area_metadata[w].label_location.latitude, weather.data.area_metadata[w].label_location.longitude]).bindPopup(weather.data.area_metadata[w].name).addTo(weatherLayer);
+    
 
 
 
-    //to create popup and then addTo weatherPins    
-    for (let b=0; b<weather.data.items[0].forecasts.length; b++ ){
-        // console.log(weather.data.items[b])
-        console.log(weather.data.items[0].forecasts[b])
-        }
+//     //to create popup and then addTo weatherPins    
+//     for (let b=0; b<weather.data.items[0].forecasts.length; b++ ){
+//         // console.log(weather.data.items[b])
+//         console.log(weather.data.items[0].forecasts[b])
+//         }
     
     // console.log(weather.data.items[0].forecasts[1])
+    // console.log(weather.data.area_metadata[0])
 
 
 
-    // console.log (wCoords[2])
-    // // console.log(wCoords.length)
-    // for (let nayeon=0; nayeon<wCoords.length; nayeon++){
-    //     L.marker(wCoords[nayeon]).addTo(map)
-    //     console.log(wCoords[nayeon])
-    // }
+//     // console.log (wCoords[2])
+//     // // console.log(wCoords.length)
+//     // for (let nayeon=0; nayeon<wCoords.length; nayeon++){
+//     //     L.marker(wCoords[nayeon]).addTo(map)
+//     //     console.log(wCoords[nayeon])
+//     // }
     
 
-    // console.log (response3.data.area_metadata.length)
-    // console.log (response3.data.area_metadata[0].label_location.latitude)
+//     // console.log (response3.data.area_metadata.length)
+//     // console.log (response3.data.area_metadata[0].label_location.latitude)
     
         
 
@@ -179,8 +192,8 @@ document.getElementById("ShowBusStops-Checkbox").addEventListener("click", funct
 
 //Toggle for Weather
 document.getElementById("ShowWeather-Checkbox").addEventListener("click", function (e) {
-    if(this.checked) map.addLayer(Wweather)
-    else map.removeLayer(Wweather)
+    if(this.checked) map.addLayer(weatherLayer)
+    else map.removeLayer(weatherLayer)
 })
 
 
