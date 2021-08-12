@@ -106,24 +106,24 @@
 <button class="btn fixed-top" id="menuBtn">Menu</button>
 <div>
   <!--tab 01-->
-  <div class="nav nav-tabs fixed-bottom" id="nav-tab-towns" role="tablist">
-    <button class="nav-link" id="nav-towns-tab-btn" data-bs-toggle="tab" data-bs-target="#nav-towns" type="button"
-      role="tab" aria-controls="nav-home" aria-selected="true">Towns</button>
+  <div class="nav nav-tabs fixed-bottom" id="nav-tab" role="tablist">
+    <button class="nav-link active" id="nav-tab-towns" data-bs-toggle="tab" data-bs-target="#nav-towns" type="button"
+      role="tab" aria-controls="nav-towns" aria-selected="true">Towns</button>
 
   <!--tab 02-->
     <button class="nav-link" id="nav-tab-filters" data-bs-toggle="tab" data-bs-target="#nav-filters" type="button"
-      role="tab" aria-controls="nav-profile" aria-selected="false">Filters</button>
+      role="tab" aria-controls="nav-filters" aria-selected="false">Filters</button>
 
   <!--tab 03-->
-    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-style" type="button"
-      role="tab" aria-controls="nav-contact" aria-selected="false">Map Style</button>
+    <button class="nav-link" id="nav-tab-mapstyle" data-bs-toggle="tab" data-bs-target="#nav-style" type="button"
+      role="tab" aria-controls="nav-mapstyle" aria-selected="false">Map Style</button>
 
   </div>
   
   
   <div class="tab-content fixed-top">
     <div class="tab-pane active" id="nav-towns"> <!--Towns-->
-      <h5>Select Town</h5>
+      <!-- <h5>Select Town</h5> -->
       <ul class="list-unstyled">
         <li><a class="dropdown-item" id="ShowAll-btn">All Clubs</a></li>
         <li><a class="dropdown-item" id="Hougang-btn">Hougang</a></li>
@@ -136,7 +136,7 @@
     </div>
 
     <div class="tab-pane" id="nav-filters"> <!--filters-->
-      <h5>This is for map filters</h5>
+      <h5 class="tabcontentheader">This is for map filters</h5>
       <ul class="list-unstyled">
         <li><input class="form-check-input" type="checkbox" name="ShowClubCheckbox" id="ShowClub-Checkbox" checked>
           <label class="form-check-label" for="ShowClubCheckbox">Show All Clubs</label>

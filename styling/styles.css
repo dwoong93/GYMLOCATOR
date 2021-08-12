@@ -19,25 +19,42 @@ body {background-color: coral;
 .nav {
     width: 400px;
     margin-bottom: 55vh;
-    background-color: rgba(201, 251, 255, 0.8);
+    background-color: rgba(10, 10, 10, 0.8);
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
     color:white;
+    border-style: none;
     border-top-right-radius: 05px;
-    border-bottom-right-radius: 05px;
+    border-top-left-radius: 05px;
+}
+.nav-link{
+    color: snow;
 }
 
-.tab-content{
+.nav-tabs .nav-link.active{
+    border-style: none;
+    color: snow;
+    background-color: rgba(10, 10, 10, 1);
+    border-top-left-radius: 05px;
+    border-top-right-radius: 05px;
+}
+.nav-tabs .nav-link{
+    border-style: none;
+}
 
+
+.dropdown-item{
+    color: snow;
+}
+
+
+.tab-content{
     width: 400px;
     margin-top: 45vh;
     padding-left: 20px;
-    background-color: rgba(201, 251, 255, 0.8);
+    color: snow;
+    background-color: rgba(10, 10, 10, 0.8);
     font-family: 'Rubik', sans-serif;
-    border-top-right-radius: 05px;
+    border-bottom-left-radius: 05px;
     border-bottom-right-radius: 05px;
 }
-.tab-pane{
-    list-style-type: none;
-}
-
