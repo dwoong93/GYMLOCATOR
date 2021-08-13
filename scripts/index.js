@@ -131,15 +131,15 @@ window.addEventListener('DOMContentLoaded', async function () {
     let wCoords = []
     let weatherLayer = L.layerGroup()
     let response3 = await axios.get('https://api.data.gov.sg/v1/environment/2-hour-weather-forecast');
-    let weather = response3
-    let blah= weather.data.items[0]
-    for (let w=0; w<weather.data.area_metadata.length; w++ ){
-        let weatherPoint = (weather.data.area_metadata[w]);
-        // console.log (weatherPoint)
+    let weather = response3.data
+    // let blah= weather.data.items[0]
+    for (let w=0; w<weather.area_metadata.length; w++ ){
+        let weatherPoint = (weather.area_metadata[w]);
+        console.log (weatherPoint)
     }
 
-    for (let b=0; b<blah.forecasts.length; b++){
-        console.log(blah.forecasts[b])}
+    // for (let b=0; b<blah.forecasts.length; b++){
+    //     console.log(blah.forecasts[b])}
     
         
         
