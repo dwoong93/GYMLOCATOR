@@ -128,18 +128,20 @@ window.addEventListener('DOMContentLoaded', async function () {
 
 // ////////////////////////WEATHER//////////////////////////////////////////
 //     //Loading geoJson data for weather
-    let wCoords = []
+    
     let weatherLayer = L.layerGroup()
     let response3 = await axios.get('https://api.data.gov.sg/v1/environment/2-hour-weather-forecast');
     let weather = response3.data
-    // let blah= weather.data.items[0]
-    for (let w=0; w<weather.area_metadata.length; w++ ){
-        let weatherPoint = (weather.area_metadata[w]);
+    for (let w=0; w<weather.area_metadata.length; w++ ){ //to loop through 47 pieces of information
+        let weatherPoint = (weather.area_metadata[w]); //weatherPoint houses the name of the area and latlong 
         console.log (weatherPoint)
+        let weatherStatus = (weather.items[0].forecasts[w].forecast) //weatherStatus houses 47 instances of a weather status
+        console.log (weatherStatus)
+// To create markers that will display the location of the areas, name of areas and the weather
+        
     }
 
-    // for (let b=0; b<blah.forecasts.length; b++){
-    //     console.log(blah.forecasts[b])}
+    
     
         
         
