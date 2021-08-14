@@ -119,7 +119,20 @@ window.addEventListener('DOMContentLoaded', async function () {
         }
     })
 
+//////////////Weather Icons//////////////
+let partlyCloudyNight = L.icon({
+    iconUrl: "/images/weatherIcons/cloudMoon.png",
+    iconSize: [40, 40],
+    iconAnchor: [20, 40],
+    popupAnchor: [-3, -40],
+})
 
+let fairNight = L.icon({
+    iconUrl: "/images/weatherIcons/moon.png",
+    iconSize: [40, 40],
+    iconAnchor: [20, 40],
+    popupAnchor: [-3, -40],
+})
 
 
 
@@ -138,7 +151,12 @@ window.addEventListener('DOMContentLoaded', async function () {
         let weatherStatus = (weather.items[0].forecasts[w].forecast) //weatherStatus houses 47 instances of a weather status
         console.log (weatherStatus)
 // To create markers that will display the location of the areas, name of areas and the weather
-        
+    if (weatherStatus === "Partly Cloudy (Night)"){
+        L.marker([weatherPoint.label_location.latitude, weatherPoint.label_location.longitude],{icon: partlyCloudyNight} ).bindPopup(weatherPoint.name + '<br>' + weatherStatus).addTo(weatherLayer)
+    }
+    else if (weatherStatus === "Fair (Night)"){
+        L.marker([weatherPoint.label_location.latitude, weatherPoint.label_location.longitude],{icon: fairNight} ).bindPopup(weatherPoint.name + '<br>' + weatherStatus).addTo(weatherLayer)
+    }
     }
 
     
@@ -150,34 +168,11 @@ window.addEventListener('DOMContentLoaded', async function () {
         
         
         
-        // L.marker([weather.data.area_metadata[w].label_location.latitude, weather.data.area_metadata[w].label_location.longitude]).bindPopup(weather.data.area_metadata[w].name).addTo(weatherLayer);
+    
     
 
 
 
-//     //to create popup and then addTo weatherPins    
-//     for (let b=0; b<weather.data.items[0].forecasts.length; b++ ){
-//         // console.log(weather.data.items[b])
-//         console.log(weather.data.items[0].forecasts[b])
-//         }
-    
-    // console.log(weather.data.items[0].forecasts[1])
-    // console.log(weather.data.area_metadata[0])
-
-
-
-//     // console.log (wCoords[2])
-//     // // console.log(wCoords.length)
-//     // for (let nayeon=0; nayeon<wCoords.length; nayeon++){
-//     //     L.marker(wCoords[nayeon]).addTo(map)
-//     //     console.log(wCoords[nayeon])
-//     // }
-    
-
-//     // console.log (response3.data.area_metadata.length)
-//     // console.log (response3.data.area_metadata[0].label_location.latitude)
-    
-        
 
 
 

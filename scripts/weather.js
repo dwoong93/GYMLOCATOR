@@ -1,4 +1,9 @@
-
+let partlyCloudyNight = L.icon({
+    iconUrl: 'images\weatherIcons\cloud-moon.png',
+    iconSize: [40, 40],
+    iconAnchor: [20, 40],
+    popupAnchor: [-3, -40],
+})
 
 
 
