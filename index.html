@@ -23,101 +23,84 @@
 </head>
 
 <body>
+  <a class="navbar-brand fixed-top" href="#">
+    <img src="images\runningMan.png" alt="Gym Locator Logo" width="100" height="100"
+      class="d-inline-block align-text-top"></a>
   
-
+  
+  
+  
+  <div>
+    <!--tab 01-->
+    <div class="nav nav-tabs fixed-bottom" id="nav-tab" role="tablist">
+      <button class="nav-link active" id="nav-tab-towns" data-bs-toggle="tab" data-bs-target="#nav-towns" type="button"
+        role="tab" aria-controls="nav-towns" aria-selected="true">Towns</button>
+  
+    <!--tab 02-->
+      <button class="nav-link" id="nav-tab-filters" data-bs-toggle="tab" data-bs-target="#nav-filters" type="button"
+        role="tab" aria-controls="nav-filters" aria-selected="false">Filters</button>
+  
+    <!--tab 03-->
+      <button class="nav-link" id="nav-tab-mapstyle" data-bs-toggle="tab" data-bs-target="#nav-style" type="button"
+        role="tab" aria-controls="nav-mapstyle" aria-selected="false">Map Style</button>
+  
+    </div>
+    
+    
+    <div class="tab-content fixed-top">
+      <div class="tab-pane active" id="nav-towns"> <!--Towns-->
+        <!-- <h5>Select Town</h5> -->
+        <ul class="list-unstyled">
+          <li><a class="dropdown-item" id="ShowAll-btn">All Clubs</a></li>
+          <li><a class="dropdown-item" id="Hougang-btn">Hougang</a></li>
+          <li><a class="dropdown-item" id="Punggol-btn">Punggol</a></li>
+          <li><a class="dropdown-item" id="Sengkang-btn">Sengkang</a></li>
+          <li><a class="dropdown-item" id="Buangkok-btn">Buangkok</a></li>
+          <li><a class="dropdown-item" id="Serangoon-btn">Serangoon</a></li>
           
-
-  <!--TEST----------------------------------------------------------------------------------------------------------------------------------->
-<a class="navbar-brand fixed-top" href="#">
-  <img src="images\runningMan.png" alt="Gym Locator Logo" width="100" height="100"
-    class="d-inline-block align-text-top"></a>
-<!--button for sidebar-->
-<!-- <a class="btn" href="#" role="button" aria-expanded="false" aria-controls="collapseMenu" data-bs-toggle="collapse">button</a> -->
-
-
-<div class="toggler fixed-top">
-  <img src="images/arrowicon.png" alt="Toggle to view sidebar" id="navTogglebtnicon">
-</div>
-
-
-
-
-<div>
-  <!--tab 01-->
-  <div class="nav nav-tabs fixed-bottom" id="nav-tab" role="tablist">
-    <button class="nav-link active" id="nav-tab-towns" data-bs-toggle="tab" data-bs-target="#nav-towns" type="button"
-      role="tab" aria-controls="nav-towns" aria-selected="true">Towns</button>
-
-  <!--tab 02-->
-    <button class="nav-link" id="nav-tab-filters" data-bs-toggle="tab" data-bs-target="#nav-filters" type="button"
-      role="tab" aria-controls="nav-filters" aria-selected="false">Filters</button>
-
-  <!--tab 03-->
-    <button class="nav-link" id="nav-tab-mapstyle" data-bs-toggle="tab" data-bs-target="#nav-style" type="button"
-      role="tab" aria-controls="nav-mapstyle" aria-selected="false">Map Style</button>
-
+        </ul>
+      </div>
+  
+      <div class="tab-pane" id="nav-filters"> <!--filters-->
+        <h5 class="tabcontentheader">This is for map filters</h5>
+        <ul class="list-unstyled">
+          <li><input class="form-check-input" type="checkbox" name="ShowClubCheckbox" id="ShowClub-Checkbox" checked>
+            <label class="form-check-label" for="ShowClubCheckbox">Show All Clubs</label>
+          </li>
+          <li><input class="form-check-input" type="checkbox" name="ShowBusStops" id="ShowBusStops-Checkbox">
+            <label class="form-check-label" for="ShowBusStops">Show Bus Stops</label>
+          </li>
+          <li><input class="form-check-input" type="checkbox" name="ShowWeather" id="ShowWeather-Checkbox">
+            <label class="form-check-label" for="ShowWeather">Show Weather Forecast</label>
+          </li>
+        </ul>
+      </div>
+  
+      <div class="tab-pane" id="nav-style"> <!--style-->
+        <h5>This is for map styles</h5>
+        <ul class="list-unstyled">
+          <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="OneMapLightRadio-btn">
+            <label class="form-check-label" for="flexRadioDefault2">One Map (Default)</label>
+          </li>
+  
+          <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="OSMRadio-btn">
+            <label class="form-check-label" for="flexRadioDefault2">Open Street Map</label>
+          </li>
+  
+          <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="darkmodeRadio-btn" checked>
+            <label class="form-check-label" for="flexRadioDefault1">Dark Mode</label>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <!--END OF TEST----------------------------------------------------------------------------------------------------------------------------->
   </div>
-  
-  
-  <div class="tab-content fixed-top">
-    <div class="tab-pane active" id="nav-towns"> <!--Towns-->
-      <!-- <h5>Select Town</h5> -->
-      <ul class="list-unstyled">
-        <li><a class="dropdown-item" id="ShowAll-btn">All Clubs</a></li>
-        <li><a class="dropdown-item" id="Hougang-btn">Hougang</a></li>
-        <li><a class="dropdown-item" id="Punggol-btn">Punggol</a></li>
-        <li><a class="dropdown-item" id="Sengkang-btn">Sengkang</a></li>
-        <li><a class="dropdown-item" id="Buangkok-btn">Buangkok</a></li>
-        <li><a class="dropdown-item" id="Serangoon-btn">Serangoon</a></li>
-        
-      </ul>
-    </div>
 
-    <div class="tab-pane" id="nav-filters"> <!--filters-->
-      <h5 class="tabcontentheader">This is for map filters</h5>
-      <ul class="list-unstyled">
-        <li><input class="form-check-input" type="checkbox" name="ShowClubCheckbox" id="ShowClub-Checkbox" checked>
-          <label class="form-check-label" for="ShowClubCheckbox">Show All Clubs</label>
-        </li>
-        <li><input class="form-check-input" type="checkbox" name="ShowBusStops" id="ShowBusStops-Checkbox">
-          <label class="form-check-label" for="ShowBusStops">Show Bus Stops</label>
-        </li>
-        <li><input class="form-check-input" type="checkbox" name="ShowWeather" id="ShowWeather-Checkbox">
-          <label class="form-check-label" for="ShowWeather">Show Weather Forecast</label>
-        </li>
-      </ul>
-    </div>
 
-    <div class="tab-pane" id="nav-style"> <!--style-->
-      <h5>This is for map styles</h5>
-      <ul class="list-unstyled">
-        <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="OneMapLightRadio-btn">
-          <label class="form-check-label" for="flexRadioDefault2">One Map (Default)</label>
-        </li>
-
-        <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="OSMRadio-btn">
-          <label class="form-check-label" for="flexRadioDefault2">Open Street Map</label>
-        </li>
-
-        <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="darkmodeRadio-btn" checked>
-          <label class="form-check-label" for="flexRadioDefault1">Dark Mode</label>
-        </li>
-      </ul>
-    </div>
-  </div>
-<!--END OF TEST----------------------------------------------------------------------------------------------------------------------------->
-  
-</div>
-        <!-- </ul> -->
-      <!-- </div> -->
-    <!-- </div> -->
-  <!-- </nav> -->
-  <!--Map-->
-  <div class="container-10">
-    <div id="singapore-map"></div>
-  </div>     
- 
-
+    <!--Map-->
+    <div>
+      <div id="singapore-map"></div>
+    </div>   
   
 
 

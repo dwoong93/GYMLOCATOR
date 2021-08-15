@@ -11,14 +11,12 @@ body {background-color: coral;
 
 }
 
-.menuBtn{
-    margin-left: -500px;
 
-}
 
 .nav {
     width: 400px;
     margin-bottom: 55vh;
+    margin-left: 02px;
     background-color: rgba(10, 10, 10, 0.8);
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
@@ -30,11 +28,13 @@ body {background-color: coral;
 .nav-link{
     color: snow;
 }
-
+.nav-link:hover{
+    color: cyan;
+}
 .nav-tabs .nav-link.active{
     border-style: none;
-    color: snow;
-    background-color: rgba(10, 10, 10, 1);
+    color: cyan;
+    background-color: rgba(10, 10, 10, 0.8);
     border-top-left-radius: 05px;
     border-top-right-radius: 05px;
 }
@@ -51,6 +51,7 @@ body {background-color: coral;
 .tab-content{
     width: 400px;
     margin-top: 45vh;
+    margin-left:02px;
     padding-left: 20px;
     color: snow;
     background-color: rgba(10, 10, 10, 0.8);
@@ -59,7 +60,16 @@ body {background-color: coral;
     border-bottom-right-radius: 05px;
 }
 
-.toggler{
-    width: 50px;
-    height: 50px;
+.form-check-label:hover{
+    color: cyan;
+    
 }
+.dropdown-item:hover{
+    background-color: rgba(10, 10, 10, 0.8);
+    color: cyan;
+    
+}
+
+
+
+

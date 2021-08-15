@@ -4,7 +4,7 @@ let singapore = [1.3558681517963378, 103.81259782407385];
 //Centre point on first load
 let map = L.map('singapore-map', {
     zoomSnap: 0.25, minZoom: 12.5, maxBounds: [[1.4724179719905892, 104.00802298417915], [1.2113590252812299, 103.61150331088808]]
-}).setView([1.3558681517963378, 103.81259782407385], 12.5);
+}).setView([1.3558681517963378, 103.81259782407385], 12.75);
 
 //One MapSG Default
 let OneMapSG = L.tileLayer('https://maps-{s}.onemap.sg/v3/Default/{z}/{x}/{y}.png', {

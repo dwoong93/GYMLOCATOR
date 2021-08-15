@@ -1,3 +1,18 @@
+// const menuBtn = document.querySelector('.menu-btn');
+// let menuOpen = false
+// menuBtn.addEventListener('click', function(e){
+//     if(menuOpen === false){
+//         menuBtn.classList.add('open');
+//         menuOpen = true;
+//     }else{
+//         menuBtn.classList.remove('open');
+//         menuOpen=false;
+//     }
+// });
+
+
+
+
 //Town Selector and fly-To-Town region
 let houganglatlng = [1.372135151181164, 103.8859292830705]
     let punggollatlng = [1.401469018441145, 103.90283016626528]
