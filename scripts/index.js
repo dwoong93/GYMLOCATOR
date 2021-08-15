@@ -77,11 +77,12 @@ window.addEventListener('DOMContentLoaded', async function () {
     clubCluster.addTo(map)
 
     //Loading geoJson data for gym clubs
-    let response = await axios.get('data/CLUB.geojson');
+    let response = await axios.get('data/CLUBS.geojson');
     let clubCoords = response.data.features;
     let clubs = L.geoJson(response.data, {
         onEachFeature: function (feature, layer) {
-            layer.bindPopup(feature.properties.Club + feature.properties.Address).addTo(clubCluster);
+            layer.bindPopup('<b>Club Name: </b>' + feature.properties.Club + '<br>' + '<b>Address: </b>' + '<br>' + 
+            feature.properties.Address + '<br>' + '<b>Contact: </b>' + '<br>' + feature.properties.Contact).addTo(clubCluster);
             layer.setIcon(clubIcons).addTo(clubCluster);
         }
     })
@@ -104,6 +105,8 @@ window.addEventListener('DOMContentLoaded', async function () {
         }
     })
 
+
+ //WEATHER   
 //////////////Weather Icons//////////////
 let partlyCloudyNight = L.icon({
     iconUrl: "/images/weatherIcons/cloudMoon.png",
@@ -123,43 +126,37 @@ let fairNight = L.icon({
     iconUrl: "/images/weatherIcons/moon.png",
     iconSize: [75, 75],
     iconAnchor: [30, 60],
-    popupAnchor: [-3, -40],
+    popupAnchor: [10, -40],
 })
 
 let fairDay = L.icon({
     iconUrl: "/images/weatherIcons/fairDay.png",
     iconSize: [75, 75],
     iconAnchor: [30, 60],
-    popupAnchor: [-3, -40],
+    popupAnchor: [10, -40],
 })
 
 let lightRain = L.icon({
     iconUrl: "/images/weatherIcons/lightRain.png",
     iconSize: [75, 75],
     iconAnchor: [30, 60],
-    popupAnchor: [-3, -40],
+    popupAnchor: [10, -40],
 })
 let moderateRain = L.icon({
     iconUrl: "/images/weatherIcons/moderateRain.png",
     iconSize: [75, 75],
     iconAnchor: [30, 60],
-    popupAnchor: [-3, -40],
+    popupAnchor: [10, -40],
 })
 let heavyThunderyShowers = L.icon({
     iconUrl: "/images/weatherIcons/heavyThunderyShowers.png",
     iconSize: [75, 75],
     iconAnchor: [30, 60],
-    popupAnchor: [-3, -40],
+    popupAnchor: [10, -40],
 })
 
 
-
-
-
-
-
-// ////////////////////////WEATHER//////////////////////////////////////////
-//     //Loading geoJson data for weather
+//Loading geoJson data for weather
     
     let weatherLayer = L.layerGroup()
     let response3 = await axios.get('https://api.data.gov.sg/v1/environment/2-hour-weather-forecast');
@@ -169,6 +166,7 @@ let heavyThunderyShowers = L.icon({
         console.log (weatherPoint)
         let weatherStatus = (weather.items[0].forecasts[w].forecast) //weatherStatus houses 47 instances of a weather status
         console.log (weatherStatus)
+
 // To create markers that will display the location of the areas, name of areas and the weather
     if (weatherStatus === "Partly Cloudy (Night)"){
         L.marker([weatherPoint.label_location.latitude, weatherPoint.label_location.longitude],{icon: partlyCloudyNight} ).bindPopup(weatherPoint.name + '<br>' + weatherStatus).addTo(weatherLayer)
