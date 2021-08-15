@@ -10,8 +10,32 @@ body {background-color: coral;
     padding-left: 50px;
 
 }
-
-
+.btn{
+    position: absolute;
+    top: 340px;
+    left:5px;
+    height: 45px;
+    width: 45px;
+    border-radius: 3px;
+    text-align: center;
+    
+}
+.arrowicon{
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+.arrowicon:hover{
+    transition-duration: 0.5s;
+    transition-delay: 0.1s;
+    transform:rotate(90deg);
+    opacity: 1;
+}
+.btn span{
+    color: white;
+    font-size: 28px;
+    line-height: 45px;
+}
 
 .nav {
     width: 400px;
