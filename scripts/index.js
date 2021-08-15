@@ -4,7 +4,7 @@ let singapore = [1.3558681517963378, 103.81259782407385];
 //Centre point on first load
 let map = L.map('singapore-map', {
     zoomSnap: 0.25, minZoom: 12.5, maxBounds: [[1.4724179719905892, 104.00802298417915], [1.2113590252812299, 103.61150331088808]]
-}).setView([1.3558681517963378, 103.81259782407385], 12.75);
+}).setView([1.3558681517963378, 103.81259782407385], 12.5);
 
 //One MapSG Default
 let OneMapSG = L.tileLayer('https://maps-{s}.onemap.sg/v3/Default/{z}/{x}/{y}.png', {
@@ -12,7 +12,7 @@ let OneMapSG = L.tileLayer('https://maps-{s}.onemap.sg/v3/Default/{z}/{x}/{y}.pn
     maxZoom: 18,
     bounds: [[1.56073, 104.11475], [1.16, 103.502]],
     attribution: '<img src="https://docs.onemap.sg/maps/images/oneMap64-01.png" style="height:20px;width:20px;"/> New OneMap | Map data &copy; contributors, <a href="http://SLA.gov.sg">Singapore Land Authority</a>'
-}).addTo(map);
+});
 
 // Open Street Map 
 let OSM = L.tileLayer(
@@ -35,7 +35,7 @@ let darkModeMap = L.tileLayer('https://maps-{s}.onemap.sg/v3/Night/{z}/{x}/{y}.p
     maxZoom: 18,
     bounds: [[1.56073, 104.11475], [1.16, 103.502]],
     attribution: '<img src="https://docs.onemap.sg/maps/images/oneMap64-01.png" style="height:20px;width:20px;"/> New OneMap | Map data &copy; contributors, <a href="http://SLA.gov.sg">Singapore Land Authority</a>'
-})
+}).addTo(map)
 
 // Toggling for map styles or theme 
 //onemap
@@ -67,6 +67,12 @@ window.addEventListener('DOMContentLoaded', async function () {
     //Layer group for Anytime Fitness Club - All
     let allClubs = L.layerGroup();
 
+    let clubIcons = L.icon({
+        iconUrl: "/images/runningMan.png",
+        iconSize: [40, 40],
+        iconAnchor: [20, 40],
+        popupAnchor: [-3, -40],
+    })
     //Clustering for for Anytime Fitness Club Locations
     let clubCluster = L.markerClusterGroup({
         spiderfyOnMaxZoom: false,
@@ -80,34 +86,10 @@ window.addEventListener('DOMContentLoaded', async function () {
     let clubCoords = response.data.features;
     let clubs = L.geoJson(response.data, {
         onEachFeature: function (feature, layer) {
-            layer.bindPopup(feature.properties.Club + feature.properties.Address)
+            layer.bindPopup(feature.properties.Club + feature.properties.Address).addTo(clubCluster)
         }
-    }).addTo(clubCluster)
+    })
 
-    //getting outlet names and putting them into an array
-    let outletNames = [];
-    for (let x = 0; x < clubCoords.length; x++) {
-        outletNames.push(clubCoords[x].properties.Club)
-    }
-    // console.log(outletNames);
-
-    //getting outlet coordinates and putting them into an array       
-    let outletCoords = [];
-    for (let i = 0; i < clubCoords.length; i++) {
-        outletCoords.push([clubCoords[i].geometry.coordinates[1],clubCoords[i].geometry.coordinates[0]])
-    }
-
-    // Combining outlet names and coordinates into key-value pairs.
-    let keyValPair = outletCoords.reduce(function (keyValPair, field, index) {
-        outletCoords[outletNames[index]] = field;
-    }, {})
-
-    console.log(outletCoords);
-
-    for (let y=0; y< outletCoords.length; y++){
-        if (y == "Ang Mo Kio"){
-            console.log (y)
-        }}
 
 
     ////////////////////////BUS STOPS//////////////////////////////////////////
@@ -127,12 +109,46 @@ let partlyCloudyNight = L.icon({
     popupAnchor: [-3, -40],
 })
 
-let fairNight = L.icon({
-    iconUrl: "/images/weatherIcons/moon.png",
-    iconSize: [40, 40],
-    iconAnchor: [20, 40],
+let partlyCloudyDay = L.icon({
+    iconUrl: "/images/weatherIcons/partlyCloudyDay.png",
+    iconSize: [75, 75],
+    iconAnchor: [30, 60],
     popupAnchor: [-3, -40],
 })
+
+let fairNight = L.icon({
+    iconUrl: "/images/weatherIcons/moon.png",
+    iconSize: [75, 75],
+    iconAnchor: [30, 60],
+    popupAnchor: [-3, -40],
+})
+
+let fairDay = L.icon({
+    iconUrl: "/images/weatherIcons/fairDay.png",
+    iconSize: [75, 75],
+    iconAnchor: [30, 60],
+    popupAnchor: [-3, -40],
+})
+
+let lightRain = L.icon({
+    iconUrl: "/images/weatherIcons/lightRain.png",
+    iconSize: [75, 75],
+    iconAnchor: [30, 60],
+    popupAnchor: [-3, -40],
+})
+let moderateRain = L.icon({
+    iconUrl: "/images/weatherIcons/moderateRain.png",
+    iconSize: [75, 75],
+    iconAnchor: [30, 60],
+    popupAnchor: [-3, -40],
+})
+let heavyThunderyShowers = L.icon({
+    iconUrl: "/images/weatherIcons/heavyThunderyShowers.png",
+    iconSize: [75, 75],
+    iconAnchor: [30, 60],
+    popupAnchor: [-3, -40],
+})
+
 
 
 
@@ -154,9 +170,37 @@ let fairNight = L.icon({
     if (weatherStatus === "Partly Cloudy (Night)"){
         L.marker([weatherPoint.label_location.latitude, weatherPoint.label_location.longitude],{icon: partlyCloudyNight} ).bindPopup(weatherPoint.name + '<br>' + weatherStatus).addTo(weatherLayer)
     }
+    else if (weatherStatus === "Partly Cloudy (Day)" || weatherStatus === "Cloudy"){
+        L.marker([weatherPoint.label_location.latitude, weatherPoint.label_location.longitude],{icon: partlyCloudyDay} ).bindPopup(weatherPoint.name + '<br>' + weatherStatus).addTo(weatherLayer)
+    }
     else if (weatherStatus === "Fair (Night)"){
         L.marker([weatherPoint.label_location.latitude, weatherPoint.label_location.longitude],{icon: fairNight} ).bindPopup(weatherPoint.name + '<br>' + weatherStatus).addTo(weatherLayer)
     }
+    else if (weatherStatus === "Fair (Day)" || weatherStatus === "Fair" || weatherStatus === "Fair & Warm"){
+        L.marker([weatherPoint.label_location.latitude, weatherPoint.label_location.longitude],{icon: fairDay} ).bindPopup(weatherPoint.name + '<br>' + weatherStatus).addTo(weatherLayer)
+    }
+    else if (weatherStatus === "Light Showers" || weatherStatus === "Light Rain" || weatherStatus === "Light Showers" ){
+        L.marker([weatherPoint.label_location.latitude, weatherPoint.label_location.longitude],{icon: lightRain} ).bindPopup(weatherPoint.name + '<br>' + weatherStatus).addTo(weatherLayer)
+    }
+    else if (weatherStatus === "Showers" || weatherStatus === "Moderate Rain" || weatherStatus === "Moderate Showers"){
+        L.marker([weatherPoint.label_location.latitude, weatherPoint.label_location.longitude],{icon: moderateRain} ).bindPopup(weatherPoint.name + '<br>' + weatherStatus).addTo(weatherLayer)
+    }
+    else if (weatherStatus === "Heavy Showers" || weatherStatus === "Heavy Rain" || weatherStatus === "Thundery Showers" || weatherStatus === "Heavy Thundery Showers"){
+        L.marker([weatherPoint.label_location.latitude, weatherPoint.label_location.longitude],{icon: heavyThunderyShowers} ).bindPopup(weatherPoint.name + '<br>' + weatherStatus).addTo(weatherLayer)
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    //end of weather function
     }
 
     
