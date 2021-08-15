@@ -53,12 +53,7 @@ document.getElementById("darkmodeRadio-btn").addEventListener("click", function 
     map.removeLayer(darkModeMap);
     map.addLayer(darkModeMap)})
 
-//icon for clubs
-const clubIcon = L.icon({
-    iconUrl: 'images/clublogo.png',
-    iconSize: [40, 40],
-    iconAnchor: [20, 25]
-})
+
 
 //////////////////////////////////Importing of data//////////////////////////////////
 window.addEventListener('DOMContentLoaded', async function () {
@@ -68,10 +63,10 @@ window.addEventListener('DOMContentLoaded', async function () {
     let allClubs = L.layerGroup();
 
     let clubIcons = L.icon({
-        iconUrl: "/images/runningMan.png",
-        iconSize: [40, 40],
-        iconAnchor: [20, 40],
-        popupAnchor: [-3, -40],
+        iconUrl: "/images/clubPin.png",
+        iconSize: [30, 40],
+        iconAnchor: [15, 40],
+        popupAnchor:  [0, -30]
     })
     //Clustering for for Anytime Fitness Club Locations
     let clubCluster = L.markerClusterGroup({
@@ -86,18 +81,26 @@ window.addEventListener('DOMContentLoaded', async function () {
     let clubCoords = response.data.features;
     let clubs = L.geoJson(response.data, {
         onEachFeature: function (feature, layer) {
-            layer.bindPopup(feature.properties.Club + feature.properties.Address).addTo(clubCluster)
+            layer.bindPopup(feature.properties.Club + feature.properties.Address).addTo(clubCluster);
+            layer.setIcon(clubIcons).addTo(clubCluster);
         }
     })
 
 
 
     ////////////////////////BUS STOPS//////////////////////////////////////////
+    let busIcons = L.icon({
+        iconUrl: "/images/buslogo.png",
+        iconSize: [15,20],
+        iconAnchor: [10, 15],
+        popupAnchor:  [0, -30]
+    })
     //Loading geoJson data for bus stop loc and info
     let response2 = await axios.get('data/BUS.geojson');
     let busLayer = L.geoJson(response2.data, {
         onEachFeature: function (feature, layer) {
-            layer.bindPopup(feature.properties.busStopName)
+            layer.bindPopup(feature.properties.busStopName);
+            layer.setIcon(busIcons);
         }
     })
 
