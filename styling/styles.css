@@ -10,6 +10,10 @@ body {background-color: coral;
     padding-left: 50px;
 
 }
+/* #sideMenu{
+    transform:translateX(400px);
+} */
+
 .btn{
     position: absolute;
     top: 340px;
@@ -19,6 +23,9 @@ body {background-color: coral;
     border-radius: 3px;
     text-align: center;
     
+}
+.btn.click{
+    left: 200px;
 }
 .arrowicon{
     height: 40px;
@@ -31,13 +38,9 @@ body {background-color: coral;
     transform:rotate(90deg);
     opacity: 1;
 }
-.btn span{
-    color: white;
-    font-size: 28px;
-    line-height: 45px;
-}
 
-.nav {
+
+#nav-tab {
     width: 400px;
     margin-bottom: 55vh;
     margin-left: 02px;
@@ -48,6 +51,11 @@ body {background-color: coral;
     border-style: none;
     border-top-right-radius: 05px;
     border-top-left-radius: 05px;
+    left: -400px;
+    transition:left 0.4s ease;
+}
+.show{
+    left:400px;
 }
 .nav-link{
     color: snow;

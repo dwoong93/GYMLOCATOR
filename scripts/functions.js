@@ -1,20 +1,12 @@
-// const menuBtn = document.querySelector('.menu-btn');
-// let menuOpen = false
-// menuBtn.addEventListener('click', function(e){
-//     if(menuOpen === false){
-//         menuBtn.classList.add('open');
-//         menuOpen = true;
-//     }else{
-//         menuBtn.classList.remove('open');
-//         menuOpen=false;
-//     }
-// });
 
-
+document.getElementById("burger-btn").addEventListener("click", function(e){
+    // document.getElementById("sideMenu").style.display="none";
+    document.getElementById("nav-tab").transition.left = '400px'
+})
 
 
 //Town Selector and fly-To-Town region
-let houganglatlng = [1.372135151181164, 103.8859292830705]
+    let houganglatlng = [1.372135151181164, 103.8859292830705]
     let punggollatlng = [1.401469018441145, 103.90283016626528]
     let serangoonlatlng = [1.3562070189597126, 103.87489812663978]
     let sengkanglatlng = [1.3886648098226932, 103.8939135551916]
