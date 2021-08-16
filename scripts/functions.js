@@ -27,7 +27,7 @@ document.getElementById("burger-btn").addEventListener("click", function(e){
         if (circle != null) {
             map.removeLayer(circle)
         }
-        circle = L.circle(houganglatlng, { radius: 1500 })
+        circle = L.circle(houganglatlng, { radius: 1500, fillColor: "#FFB300", color: "null", fillOpacity: 0.3 })
         map.addLayer(circle)
     })
 
@@ -37,7 +37,7 @@ document.getElementById("burger-btn").addEventListener("click", function(e){
         if (circle != null) {
             map.removeLayer(circle)
         }
-        circle = L.circle(punggollatlng, { radius: 1500 })
+        circle = L.circle(punggollatlng, { radius: 1500, fillColor: "#FFB300", color: "null", fillOpacity: 0.3 })
         map.addLayer(circle)
     })
 
@@ -47,7 +47,7 @@ document.getElementById("burger-btn").addEventListener("click", function(e){
         if (circle != null) {
             map.removeLayer(circle)
         }
-        circle = L.circle(sengkanglatlng, { radius: 1600 })
+        circle = L.circle(sengkanglatlng, { radius: 1600, fillColor: "#FFB300", color: "null", fillOpacity: 0.3 })
         map.addLayer(circle)
     })
 
@@ -57,7 +57,7 @@ document.getElementById("burger-btn").addEventListener("click", function(e){
         if (circle != null) {
             map.removeLayer(circle)
         }
-        circle = L.circle(buangkoklatlng, { radius: 1500 })
+        circle = L.circle(buangkoklatlng, { radius: 1500, fillColor: "#FFB300", color: "null", fillOpacity: 0.3 })
         map.addLayer(circle)
     })
 
@@ -67,7 +67,7 @@ document.getElementById("burger-btn").addEventListener("click", function(e){
         if (circle != null) {
             map.removeLayer(circle)
         }
-        circle = L.circle(serangoonlatlng, { radius: 1700, fillColor: "#7e3ff2", color: "yellow", fillOpacity: 0.5 })
+        circle = L.circle(serangoonlatlng, { radius: 1700, fillColor: "#FFB300", color: "null", fillOpacity: 0.3 })
         map.addLayer(circle)
     })
 

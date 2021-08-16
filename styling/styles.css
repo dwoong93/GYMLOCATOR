@@ -63,12 +63,12 @@ body {background-color: coral;
     color: snow;
 }
 .nav-link:hover{
-    color: cyan;
+    color: rgb(167, 60, 243);
 }
 .nav-tabs .nav-link.active{
     border-style: none;
-    color: cyan;
-    background-color: rgba(10, 10, 10, 0.8);
+    color: rgb(167, 60, 243);
+    background-color: rgba(10, 10, 10, 0.3);
     border-top-left-radius: 05px;
     border-top-right-radius: 05px;
 }
@@ -93,14 +93,21 @@ body {background-color: coral;
     border-bottom-left-radius: 05px;
     border-bottom-right-radius: 05px;
 }
+.tab-pane{
+    cursor: pointer;
+}
+.list-unstyled{
+    cursor: pointer;
+    padding-bottom: 25px;
+}
 
 .form-check-label:hover{
-    color: cyan;
+    color: rgb(167, 60, 243);
     
 }
 .dropdown-item:hover{
     background-color: rgba(10, 10, 10, 0.8);
-    color: cyan;
+    color: rgb(167, 60, 243);
     
 }
 
