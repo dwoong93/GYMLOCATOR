@@ -10,9 +10,11 @@ body {background-color: coral;
     padding-left: 50px;
 
 }
-/* #sideMenu{
-    transform:translateX(400px);
-} */
+#sideMenu{
+    position:absolute;
+    z-index: 9999;
+    
+}
 
 .btn{
     position: absolute;
@@ -27,12 +29,12 @@ body {background-color: coral;
 .btn.click{
     left: 200px;
 }
-.arrowicon{
+.burgericon{
     height: 40px;
     width: 40px;
-    cursor: pointer;
+    cursor:pointer;
 }
-.arrowicon:hover{
+.burgericon:hover{
     transition-duration: 0.5s;
     transition-delay: 0.1s;
     transform:rotate(90deg);
@@ -42,7 +44,7 @@ body {background-color: coral;
 
 #nav-tab {
     width: 400px;
-    margin-bottom: 55vh;
+    margin-top: 41vh;
     margin-left: 02px;
     background-color: rgba(10, 10, 10, 0.8);
     font-family: 'Rubik', sans-serif;
@@ -51,7 +53,7 @@ body {background-color: coral;
     border-style: none;
     border-top-right-radius: 05px;
     border-top-left-radius: 05px;
-    left: -400px;
+    left: 0px;
     transition:left 0.4s ease;
 }
 .show{
@@ -82,7 +84,7 @@ body {background-color: coral;
 
 .tab-content{
     width: 400px;
-    margin-top: 45vh;
+    margin-bottom: 1vh;
     margin-left:02px;
     padding-left: 20px;
     color: snow;
