@@ -181,12 +181,13 @@ body{
     font-family: 'Rubik', sans-serif;
     border-bottom-left-radius: 05px;
     border-bottom-right-radius: 05px;
+    padding-bottom: 5px;
     padding-left: 20px;
 }
 
 .list-unstyled{
     cursor: pointer;
-    max-height: 500px;
+    max-height: 380px;
     overflow: scroll;
     overflow-x:hidden;
     scroll-margin-right:5px;
