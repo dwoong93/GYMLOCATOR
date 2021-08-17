@@ -17,13 +17,9 @@ Icons such as the logo, map pins were made using Adobe Illustrator. The Hamburge
 Technologies Used
 This project utilised HTML, CSS, JavaScript, BootStrap 5.0 and Leaflet (map). The map library used was from https://leafletjs.com/. Additional m ap tile layers "One Map light and dark" were created by One Map SG and uploaded to https://leaflet-extras.github.io/leaflet-providers/preview/.
 
-
-
-
-
-
-
 Anytime Fitness club address was taken from Anytime Fitness Singapore, coordinates were found on googlemaps.
-Data was then made in Microsoft Excel and saved as CSV UTF-8.
-CSV was converted to geoJSON using <https://odileeds.github.io/CSV2GeoJSON/>, which was created by Stuart Lowe, ODI Leeds 2020. (MIT Licence).
+Bus stop and fly-to coordinates were manually sourced from google maps.
+
+These Data were then stored in Microsoft Excel and saved as CSV UTF-8.
+The CSV was converted to geoJSON using <https://odileeds.github.io/CSV2GeoJSON/>, which was created by Stuart Lowe, ODI Leeds 2020. (MIT Licence).
  
