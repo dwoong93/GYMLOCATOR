@@ -1,5 +1,6 @@
 GYMLOCATOR
-Try it out: https://dwoong93.github.io/GYMLOCATOR/
+Try it out: 
+https://dwoong93.github.io/GYMLOCATOR/
 
 ![responsiveness template](https://user-images.githubusercontent.com/84681965/129767361-96300cc8-e039-480b-947f-74e179629af2.png)
 
