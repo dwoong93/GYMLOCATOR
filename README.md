@@ -1,5 +1,8 @@
 GYMLOCATOR
 
+![responsiveness template](https://user-images.githubusercontent.com/84681965/129767361-96300cc8-e039-480b-947f-74e179629af2.png)
+
+
 Aim
 
 The main motive behind this project would be to have a utility that could show me where the nearest gyms are.
