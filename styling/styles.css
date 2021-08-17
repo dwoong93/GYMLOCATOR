@@ -3,9 +3,6 @@
     width: 100vw;
 }
 
-body {background-color: coral;
-    height: 100vh;
-}
 #runningmanlogobox{
     position:absolute;
     z-index: 9999;
@@ -27,12 +24,11 @@ body {background-color: coral;
     padding-left: 50px;
 
 }
+/* Contains Menu/sidebar */
 .d{
     position:absolute;
     z-index: 9999;
-    /* width: 400px;
-    height: 500px; */
-    top: 400px;
+    top: 35vh;
     margin-left: 02px;
     transform:translateX(-302px);
     transition-duration: 1s;
@@ -45,11 +41,11 @@ body {background-color: coral;
     box-shadow:0 0 15px rgba(198, 117, 255, 0.3)
     
 }
-
+/* Contains Toggle button */
 .btn-burger{
     position: absolute;
     z-index: 9999;
-    top: 350px;
+    top: 25vh;
     left:5px;
     height: 45px;
     width: 45px;
@@ -61,11 +57,23 @@ body {background-color: coral;
     justify-content: center;
     align-items: center;
 }
-.btn-burger:hover{
+
+.btn-burger::after{
+    content: '';
     transition-duration: 0.5s;
     transition-delay: 0.1s;
     transform:rotate(270deg);
     transition-duration: 1.5s;
+    background-color: rgb(164, 128, 196);
+    opacity: 1;
+}
+.btn-burger::before{
+    transform:rotate(270deg);
+    background-color: rgb(84, 2, 142);
+    opacity: 1;
+}
+.btn-burger::before{
+    transform:rotate(0deg);
     background-color: rgb(164, 128, 196);
     opacity: 1;
 }
@@ -74,22 +82,8 @@ body {background-color: coral;
     font-size: 35px;
     color: snow;
 }
-.md-inactive{
+/* .md-inactive{
     color: rgba(0,0,0,0.26);
-}
-
-/* .burgericon{
-    position: absolute;
-    z-index: 9999;
-    height: 45px;
-    width: 60px;
-    cursor:pointer;
-}
-.burgericon:hover{
-    transition-duration: 0.5s;
-    transition-delay: 0.1s;
-    transform:rotate(90deg);
-    opacity: 1;
 } */
 
 

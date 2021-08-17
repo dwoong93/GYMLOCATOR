@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     const d = document.querySelector(".d");
     
     document.querySelector("#burger-btn").addEventListener("click", function(){
-        d.classList.add("d--open");
+        d.classList.toggle("d--open");
     })
 })
 
