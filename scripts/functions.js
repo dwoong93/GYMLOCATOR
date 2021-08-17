@@ -1,11 +1,10 @@
-const burger = document.querySelector('#burger-btn')
-const burger = document.querySelector('#burger-btn')
-
-// document.getElementById("burger-btn").addEventListener("click", function(e){
-//     // document.getElementById("sideMenu").style.display="none";
-//     document.getElementById("nav-tab").transition.left = '400px'
-// })
-
+document.addEventListener("DOMContentLoaded", function(e){
+    const d = document.querySelector(".d");
+    
+    document.querySelector("#burger-btn").addEventListener("click", function(){
+        d.classList.add("d--open");
+    })
+})
 
 //Town Selector and fly-To-Town region
     let houganglatlng = [1.372135151181164, 103.8859292830705]

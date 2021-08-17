@@ -15,6 +15,11 @@ body {background-color: coral;
 .runningmanlogo{
     height: 100px;
 }
+.runningmanlogo:hover{
+    transform: translateX(-500px);
+    transition-delay: 1s;
+    transition-duration: 1.5s;
+}
 .navbar-brand {
     position:absolute;
     z-index: 9999;
@@ -22,26 +27,58 @@ body {background-color: coral;
     padding-left: 50px;
 
 }
-#sideMenu{
+.d{
     position:absolute;
     z-index: 9999;
     /* width: 400px;
     height: 500px; */
-    top: 500px;
+    top: 400px;
     margin-left: 02px;
-    transition: 0.5s;
+    transform:translateX(-302px);
+    transition-duration: 1s;
+    
+}
+
+.d--open{
+    transform: translateX(15px);
+    transition-duration: 1s;
+    box-shadow:0 0 15px rgba(198, 117, 255, 0.3)
     
 }
 
 .btn-burger{
     position: absolute;
     z-index: 9999;
-    top: 440px;
+    top: 350px;
     left:5px;
-    height: 10px;
-    width: 10px;}
+    height: 45px;
+    width: 45px;
+    background-color: rgb(84, 2, 142);
+    border-style:none;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-burger:hover{
+    transition-duration: 0.5s;
+    transition-delay: 0.1s;
+    transform:rotate(270deg);
+    transition-duration: 1.5s;
+    background-color: rgb(164, 128, 196);
+    opacity: 1;
+}
 
-.burgericon{
+#btnMenu{
+    font-size: 35px;
+    color: snow;
+}
+.md-inactive{
+    color: rgba(0,0,0,0.26);
+}
+
+/* .burgericon{
     position: absolute;
     z-index: 9999;
     height: 45px;
@@ -53,16 +90,17 @@ body {background-color: coral;
     transition-delay: 0.1s;
     transform:rotate(90deg);
     opacity: 1;
-}
+} */
 
 
 #nav-tab {
     position: relative;
-    width: 400px;
+    width: 300px;
     background-color: rgba(10, 10, 10, 0.8);
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
     color:white;
+    justify-content: space-evenly;
     border-style: none;
     border-top-right-radius: 05px;
     border-top-left-radius: 05px;
@@ -101,6 +139,7 @@ body {background-color: coral;
     font-family: 'Rubik', sans-serif;
     border-bottom-left-radius: 05px;
     border-bottom-right-radius: 05px;
+    padding-left: 20px;
 }
 .tab-pane{
     cursor: pointer;

@@ -19,6 +19,8 @@
   <!--Google Font-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
@@ -26,24 +28,20 @@
   <div id="runningmanlogobox">
     <img src="images\runningMan.png" class="runningmanlogo" alt="logo">
   </div>
-    <div class="btn-burger" id="burger-btn">
-      <img src="images\hamburger.png" class="btn burgericon" type="button"alt="show menu">
-    </div>
+
+  <button class="btn-burger" id="burger-btn" type="button">
+    <i class="material-icons md-inactive" id="btnMenu">menu</i>
+  </button>
   
   
   
-  <div class="d-none d-md-block" id="sideMenu">
-    <!-- Toggle for sidebar -->
-    <!-- <button class="btn" id="burger-btn"></button> -->
+  <div class="d d-none d-md-block " id="sideMenu">
     
-    
-    
+
     <!--tab 01-->
     <div class="nav nav-tabs " id="nav-tab" role="tablist">
-      <a class="nav-link active" id="nav-tab-towns" data-bs-toggle="tab" data-bs-target="#nav-towns" type="button"
-        role="tab" aria-controls="nav-towns" aria-selected="true">
-        <i class="bi bi-building"></i>
-        <span>Towns</span></a>
+      <button class="nav-link active" id="nav-tab-towns" data-bs-toggle="tab" data-bs-target="#nav-towns" type="button"
+        role="tab" aria-controls="nav-towns" aria-selected="true">Towns</button>
   
     <!--tab 02-->
       <button class="nav-link" id="nav-tab-filters" data-bs-toggle="tab" data-bs-target="#nav-filters" type="button"
