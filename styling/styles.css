@@ -13,7 +13,6 @@ body{
     transition-duration: 0.5s;
     transform: translateX(0vw);
     cursor: pointer;
-    maxheight:100vh;
 }
 ::-webkit-scrollbar{
     width: 5px;
