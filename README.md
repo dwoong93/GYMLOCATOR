@@ -9,7 +9,8 @@ Anytime Fitness is a hugely successful global fitness franchise that prides itse
 UX
 Having a single-page design with minimal clutter would allow this project to be mobile-friendly.
 The dark mode interface map allows for a more easy-on-the-eye experience in this digital age, there are also two light modes, should the user feel the need to have a light-mode feature for easy-of-use under the flaring sunlight. 
-Most of the interface are in two-toned purple, taking inspiration from the Anytime Fitness colours. Inspired by the iconic colours of the Anytime Fitness
+Taking inspiration from the Anytime Fitness colours, the elements of the interface adn the iconic Running Man logo are in two-toned purple.
+All features can be hidden away into a small menu button on the side of the screen, making the interface very easy to use on smaller devices. 
 
 
 

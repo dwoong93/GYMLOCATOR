@@ -2,6 +2,8 @@ body{
     background-color: salmon;
     height: 100%;
     width: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 .overlay{
     position:absolute;
@@ -11,6 +13,14 @@ body{
     transition-duration: 0.5s;
     transform: translateX(0vw);
     cursor: pointer;
+    maxheight:100vh;
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(transparent, rgb(167, 60, 243) )
+    
 }
 .overlay--open{
     transform: translateX(-200vw);
