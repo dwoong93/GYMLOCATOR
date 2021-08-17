@@ -1,8 +1,10 @@
+const burger = document.querySelector('#burger-btn')
+const burger = document.querySelector('#burger-btn')
 
-document.getElementById("burger-btn").addEventListener("click", function(e){
-    // document.getElementById("sideMenu").style.display="none";
-    document.getElementById("nav-tab").transition.left = '400px'
-})
+// document.getElementById("burger-btn").addEventListener("click", function(e){
+//     // document.getElementById("sideMenu").style.display="none";
+//     document.getElementById("nav-tab").transition.left = '400px'
+// })
 
 
 //Town Selector and fly-To-Town region

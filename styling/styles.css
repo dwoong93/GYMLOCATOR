@@ -4,34 +4,48 @@
 }
 
 body {background-color: coral;
+    height: 100vh;
 }
-
-.navbar-brand {background-color:transparent;
+#runningmanlogobox{
+    position:absolute;
+    z-index: 9999;
+    top: 02px;
+    left: 40px;
+}
+.runningmanlogo{
+    height: 100px;
+}
+.navbar-brand {
+    position:absolute;
+    z-index: 9999;
+    background-color:transparent;
     padding-left: 50px;
 
 }
 #sideMenu{
     position:absolute;
     z-index: 9999;
+    /* width: 400px;
+    height: 500px; */
+    top: 500px;
+    margin-left: 02px;
+    transition: 0.5s;
     
 }
 
-.btn{
+.btn-burger{
     position: absolute;
-    top: 340px;
+    z-index: 9999;
+    top: 440px;
     left:5px;
-    height: 45px;
-    width: 45px;
-    border-radius: 3px;
-    text-align: center;
-    
-}
-.btn.click{
-    left: 200px;
-}
+    height: 10px;
+    width: 10px;}
+
 .burgericon{
-    height: 40px;
-    width: 40px;
+    position: absolute;
+    z-index: 9999;
+    height: 45px;
+    width: 60px;
     cursor:pointer;
 }
 .burgericon:hover{
@@ -43,9 +57,8 @@ body {background-color: coral;
 
 
 #nav-tab {
+    position: relative;
     width: 400px;
-    margin-top: 41vh;
-    margin-left: 02px;
     background-color: rgba(10, 10, 10, 0.8);
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
@@ -81,12 +94,8 @@ body {background-color: coral;
     color: snow;
 }
 
-
 .tab-content{
-    width: 400px;
-    margin-bottom: 1vh;
-    margin-left:02px;
-    padding-left: 20px;
+    position:relative;
     color: snow;
     background-color: rgba(10, 10, 10, 0.8);
     font-family: 'Rubik', sans-serif;
