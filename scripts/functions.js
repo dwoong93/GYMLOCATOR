@@ -19,11 +19,30 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 
 //Town Selector and fly-To-Town region
+    let angmokiolatlng = [1.3725801310240844, 103.84382114927492]
+    let bedoklatlng = [1.3256025141748007, 103.93290945498346]
+    let bishanlatlng = [1.3511726936741244, 103.84406859393023]
+    let bukitbatoklatlng=[1.3581360453725848, 103.75910623139886]
+    let bukitmerahlatlng = [1.2810573789454733, 103.82085295913308]
+    let bukitpanjanglatlng = [1.3782221464358502, 103.76012342901723]
+    let bukittimahlatlng=[1.3322107279114177, 103.78707423638998]
+    let centrallatlng = [1.3061962171836972, 103.84388491313537]
+    let ccklatlng = [1.386773924232134, 103.74610737474593]
+
+
+
+
+
+
+
+
+
     let houganglatlng = [1.372135151181164, 103.8859292830705]
     let punggollatlng = [1.401469018441145, 103.90283016626528]
     let serangoonlatlng = [1.3562070189597126, 103.87489812663978]
     let sengkanglatlng = [1.3886648098226932, 103.8939135551916]
     let buangkoklatlng = [1.3839157436675633, 103.87736690869015]
+    
     let circle = null
 
     document.getElementById("ShowAll-btn").addEventListener("click", function (e) {
@@ -33,6 +52,121 @@ document.addEventListener("DOMContentLoaded", function(e){
             map.removeLayer(circle)
         }
     })
+    document.getElementById("Angmokio-btn").addEventListener("click", function (e) {
+        // e.preventDefault()
+        map.flyTo(angmokiolatlng, 15)
+        if (circle != null) {
+            map.removeLayer(circle)
+        }
+        circle = L.circle(angmokiolatlng, { radius: 1500, fillColor: "#FFB300", color: "null", fillOpacity: 0.3 })
+        map.addLayer(circle)
+    })
+    document.getElementById("Bedok-btn").addEventListener("click", function (e) {
+        // e.preventDefault()
+        map.flyTo(bedoklatlng, 15)
+        if (circle != null) {
+            map.removeLayer(circle)
+        }
+        circle = L.circle(bedoklatlng, { radius: 1500, fillColor: "#FFB300", color: "null", fillOpacity: 0.3 })
+        map.addLayer(circle)
+    })
+    document.getElementById("Bishan-btn").addEventListener("click", function (e) {
+        // e.preventDefault()
+        map.flyTo(bishanlatlng, 15)
+        if (circle != null) {
+            map.removeLayer(circle)
+        }
+        circle = L.circle(bishanlatlng, { radius: 1500, fillColor: "#FFB300", color: "null", fillOpacity: 0.3 })
+        map.addLayer(circle)
+    })
+    document.getElementById("Bukitbatok-btn").addEventListener("click", function (e) {
+        // e.preventDefault()
+        map.flyTo(bukitbatoklatlng, 15)
+        if (circle != null) {
+            map.removeLayer(circle)
+        }
+        circle = L.circle(bukitbatoklatlng, { radius: 1500, fillColor: "#FFB300", color: "null", fillOpacity: 0.3 })
+        map.addLayer(circle)
+    })
+    document.getElementById("Bukitmerah-btn").addEventListener("click", function (e) {
+        // e.preventDefault()
+        map.flyTo(bukitmerahlatlng, 15)
+        if (circle != null) {
+            map.removeLayer(circle)
+        }
+        circle = L.circle(bukitmerahlatlng, { radius: 1600, fillColor: "#FFB300", color: "null", fillOpacity: 0.3 })
+        map.addLayer(circle)
+    })
+    document.getElementById("Bukitpanjang-btn").addEventListener("click", function (e) {
+        // e.preventDefault()
+        map.flyTo(bukitpanjanglatlng, 15)
+        if (circle != null) {
+            map.removeLayer(circle)
+        }
+        circle = L.circle(bukitpanjanglatlng, { radius: 1700, fillColor: "#FFB300", color: "null", fillOpacity: 0.3 })
+        map.addLayer(circle)
+    })
+    document.getElementById("Bukittimah-btn").addEventListener("click", function (e) {
+        // e.preventDefault()
+        map.flyTo(bukittimahlatlng, 15)
+        if (circle != null) {
+            map.removeLayer(circle)
+        }
+        circle = L.circle(bukittimahlatlng, { radius: 1700, fillColor: "#FFB300", color: "null", fillOpacity: 0.3 })
+        map.addLayer(circle)
+    })
+    document.getElementById("Central-btn").addEventListener("click", function (e) {
+        // e.preventDefault()
+        map.flyTo(centrallatlng, 15)
+        if (circle != null) {
+            map.removeLayer(circle)
+        }
+        circle = L.circle(centrallatlng, { radius: 1700, fillColor: "#FFB300", color: "null", fillOpacity: 0.3 })
+        map.addLayer(circle)
+    })
+    document.getElementById("CCK-btn").addEventListener("click", function (e) {
+        // e.preventDefault()
+        map.flyTo(ccklatlng, 15)
+        if (circle != null) {
+            map.removeLayer(circle)
+        }
+        circle = L.circle(ccklatlng, { radius: 1700, fillColor: "#FFB300", color: "null", fillOpacity: 0.3 })
+        map.addLayer(circle)
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     document.getElementById("Hougang-btn").addEventListener("click", function (e) {
         // e.preventDefault()

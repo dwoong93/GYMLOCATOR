@@ -174,6 +174,8 @@ body{
 
 .tab-content{
     position:relative;
+    max-height: 500px;
+    
     color: snow;
     background-color: rgba(10, 10, 10, 0.8);
     font-family: 'Rubik', sans-serif;
@@ -184,7 +186,20 @@ body{
 
 .list-unstyled{
     cursor: pointer;
-    padding-bottom: 25px;
+    max-height: 500px;
+    overflow: scroll;
+    overflow-x:hidden;
+    scroll-margin-right:5px;
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(transparent, rgb(167, 60, 243) )
+    
+}
+::-webkit-scrollbar-track-piece{
+    background:rgba(10, 10, 10, 0.8);
 }
 
 .form-check-label:hover{
@@ -192,7 +207,7 @@ body{
     
 }
 .dropdown-item:hover{
-    background-color: rgba(10, 10, 10, 0.8);
+    background-color: rgba(58, 58, 58, 0.1);
     color: rgb(167, 60, 243);
     
 }

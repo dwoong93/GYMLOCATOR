@@ -81,8 +81,8 @@ window.addEventListener('DOMContentLoaded', async function () {
     let clubCoords = response.data.features;
     let clubs = L.geoJson(response.data, {
         onEachFeature: function (feature, layer) {
-            layer.bindPopup('<b>Club Name: </b>' + feature.properties.Club + '<br>' + '<b>Address: </b>' + '<br>' + 
-            feature.properties.Address + '<br>' + '<b>Contact: </b>' + '<br>' + feature.properties.Contact).addTo(clubCluster);
+            layer.bindPopup('<h5>'+'<b>'+feature.properties.Club+'<b>'+'</h5>' +'<br>' + '<h6>'+'<b>Address: </b>'+'</h6>' + 
+            feature.properties.Address + '<br>' + '<br>' + '<h6>'+'<b>Contact: </b>'+'</h6>'+ feature.properties.Contact+'<br>').addTo(clubCluster);
             layer.setIcon(clubIcons).addTo(clubCluster);
         }
     })
@@ -100,7 +100,7 @@ window.addEventListener('DOMContentLoaded', async function () {
     let response2 = await axios.get('data/BUS.geojson');
     let busLayer = L.geoJson(response2.data, {
         onEachFeature: function (feature, layer) {
-            layer.bindPopup(feature.properties.busStopName);
+            layer.bindPopup('<b>Bus Stop Name: </b>' +'<br>'+ feature.properties.busStopName +'<br>'+ '<br>'+ '<b>Bus Stop Number: </b>' + '<br>'+ feature.properties.stopID);
             layer.setIcon(busIcons);
         }
     })
