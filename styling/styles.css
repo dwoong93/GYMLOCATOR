@@ -1,8 +1,71 @@
+body{
+    background-color: salmon;
+    height: 100vh;
+    width: 100vw;
+}
+.overlay{
+    position:absolute;
+    z-index: 99992;
+    width: 100vw;
+    border-style: none;
+    transition-duration: 0.5s;
+    transform: translateX(0vw);
+    cursor: pointer;
+}
+.overlay--open{
+    transform: translateX(-200vw);
+    transition-duration: 1s;
+}
+.backgroundImage{
+    position:absolute;
+    z-index: 9999;
+    width: 100vw;
+    height: 100vh;
+    border-style: none;
+    background-color: rgba(0,0,0, 0.7);
+    transition-duration: 0.5s;
+}
+.welcome{
+    display:flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    color: seashell;
+    font-family: 'Rubik', sans-serif;
+
+}
+.highlightCircle{
+    position: absolute;
+    z-index: 99999;
+    top: 21.5vh;
+    left:-24px;
+    height: 120px;
+    width: 120px;
+    background-color: rgba(122, 197, 92, 0.7);
+    box-shadow:0 0 70px rgba(207, 255, 187, 0.8);
+    border-style:none;
+    border-radius: 60px;
+
+}
+.clickExit{
+    display:flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    color: seashell;
+    font-family: 'Rubik', sans-serif;
+
+
+
+}
+/* Map */
 #singapore-map {
     height: 100vh;
     width: 100vw;
 }
-
+/* main logo */
 #runningmanlogobox{
     position:absolute;
     z-index: 9999;
@@ -17,14 +80,9 @@
     transition-delay: 1s;
     transition-duration: 1.5s;
 }
-.navbar-brand {
-    position:absolute;
-    z-index: 9999;
-    background-color:transparent;
-    padding-left: 50px;
 
-}
-/* Contains Menu/sidebar */
+
+/* Menu/sidebar */
 .d{
     position:absolute;
     z-index: 9999;
@@ -38,10 +96,8 @@
 .d--open{
     transform: translateX(15px);
     transition-duration: 1s;
-    box-shadow:0 0 15px rgba(198, 117, 255, 0.3)
-    
 }
-/* Contains Toggle button */
+/*  Toggle button */
 .btn-burger{
     position: absolute;
     z-index: 9999;
@@ -58,35 +114,25 @@
     align-items: center;
 }
 
-.btn-burger::after{
-    content: '';
+.btn-burger:hover{
     transition-duration: 0.5s;
     transition-delay: 0.1s;
-    transform:rotate(270deg);
-    transition-duration: 1.5s;
+    transition-timing-function:ease-in-out;
+    transform:rotate(-35deg);
+    transition-duration: 0.5s;
     background-color: rgb(164, 128, 196);
-    opacity: 1;
-}
-.btn-burger::before{
-    transform:rotate(270deg);
-    background-color: rgb(84, 2, 142);
-    opacity: 1;
-}
-.btn-burger::before{
-    transform:rotate(0deg);
-    background-color: rgb(164, 128, 196);
-    opacity: 1;
+    box-shadow:0 0 8px rgba(198, 117, 255, 0.8)
 }
 
+
+/*  Hamburger icon from materials.io */
 #btnMenu{
     font-size: 35px;
     color: snow;
 }
-/* .md-inactive{
-    color: rgba(0,0,0,0.26);
-} */
 
 
+/*  Tab Row */
 #nav-tab {
     position: relative;
     width: 300px;
@@ -135,9 +181,7 @@
     border-bottom-right-radius: 05px;
     padding-left: 20px;
 }
-.tab-pane{
-    cursor: pointer;
-}
+
 .list-unstyled{
     cursor: pointer;
     padding-bottom: 25px;

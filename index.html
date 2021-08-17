@@ -25,19 +25,39 @@
 </head>
 
 <body>
+  <button class="overlay" id="btn-overlay" type="button">
+    <div class="backgroundImage ">
+      <div class="welcome flex-column">
+        <h1>Welcome!</h1><br>
+        <p>This utility allows you to find a Anytime Fitness Club of your choice,<br>
+      the nearest public transport services and the two-hour weather forecast.<br>
+      To access the features of the utility, please click on the Menu icon to the left of the screen.</p><br>
+      </div>
+      <!-- <div class="highlightCircle"></div> -->
+      <div class="clickExit"><h2>Click anywhere to continue.</h2></div>
+    
+      
+    </div>
+</button>
+
+    
+  
+<!--Main logo -->
   <div id="runningmanlogobox" class="d-none d-md-block">
     <img src="images\runningMan.png" class="runningmanlogo" alt="logo">
   </div>
+<!--End of Main logo -->
 
+<!--Toggle for Side Menu -->
   <button class="btn-burger" id="burger-btn" type="button">
     <i class="material-icons md-inactive" id="btnMenu">menu</i>
+    <!-- <i class="material-icons md-inactive" id="btnClose">close</i> -->
   </button>
-  
+<!--End of Toggle for Side Menu -->
   
   
   <div class="d " id="sideMenu">
-    
-
+<!--Tab Row -->
     <!--tab 01-->
     <div class="nav nav-tabs " id="nav-tab" role="tablist">
       <button class="nav-link active" id="nav-tab-towns" data-bs-toggle="tab" data-bs-target="#nav-towns" type="button"
@@ -50,10 +70,10 @@
     <!--tab 03-->
       <button class="nav-link" id="nav-tab-mapstyle" data-bs-toggle="tab" data-bs-target="#nav-style" type="button"
         role="tab" aria-controls="nav-mapstyle" aria-selected="false">Map Style</button>
-  
     </div>
+  <!--End of Tab Row -->
     
-    
+  <!--Tab Content box -->  
     <div class="tab-content">
       <div class="tab-pane active" id="nav-towns"> <!--Towns-->
         <!-- <h5>Select Town</h5> -->
@@ -85,7 +105,7 @@
   
       <div class="tab-pane" id="nav-style"> <!--style-->
         <h5>This is for map styles</h5>
-        <ul class="list-unstyled">
+        <ul class="list-unstyled ">
           <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="OneMapLightRadio-btn">
             <label class="form-check-label" for="flexRadioDefault2">One Map (Default)</label>
           </li>
@@ -100,15 +120,15 @@
         </ul>
       </div>
     </div>
-  <!--END OF TEST----------------------------------------------------------------------------------------------------------------------------->
   </div>
+  <!--End of Tab Content box -->  
 
 
-    <!--Map-->
+  <!--Map-->
     <div>
       <div id="singapore-map"></div>
     </div>   
-  
+  <!--End of Map-->
 
 
   <!--Leaflet javascript-->

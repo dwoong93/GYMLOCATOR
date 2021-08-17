@@ -1,10 +1,22 @@
 document.addEventListener("DOMContentLoaded", function(e){
+    const overlay = document.querySelector(".overlay");
+    
+    document.querySelector("#btn-overlay").addEventListener("click", function(){
+        overlay.classList.add("overlay--open");
+    })
+})
+
+
+
+document.addEventListener("DOMContentLoaded", function(e){
     const d = document.querySelector(".d");
     
     document.querySelector("#burger-btn").addEventListener("click", function(){
         d.classList.toggle("d--open");
     })
 })
+
+
 
 //Town Selector and fly-To-Town region
     let houganglatlng = [1.372135151181164, 103.8859292830705]
