@@ -22,4 +22,4 @@ Bus stop and fly-to coordinates were manually sourced from google maps.
 
 These Data were then stored in Microsoft Excel and saved as CSV UTF-8.
 The CSV was converted to geoJSON using <https://odileeds.github.io/CSV2GeoJSON/>, which was created by Stuart Lowe, ODI Leeds 2020. (MIT Licence).
- 
+ Weather API was taken from Data.gov.sg. 
