@@ -66,7 +66,7 @@ window.addEventListener('DOMContentLoaded', async function () {
     let allClubs = L.layerGroup();
 
     let clubIcons = L.icon({
-        iconUrl: "images/clubpin.png",
+        iconUrl: "GYMLOCATOR/images/clubpin.png",
         iconSize: [30, 40],
         iconAnchor: [15, 40],
         popupAnchor: [0, -30]
