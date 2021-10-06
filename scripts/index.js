@@ -112,7 +112,7 @@ window.addEventListener('DOMContentLoaded', async function () {
     //WEATHER   
     //Weather Icons
     let partlyCloudyNight = L.icon({
-        iconUrl: "/images/weatherIcons/cloudMoon.png",
+        iconUrl: "images/weatherIcons/cloudMoon.png",
         iconSize: [40, 40],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -40],
