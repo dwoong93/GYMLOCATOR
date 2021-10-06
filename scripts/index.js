@@ -94,7 +94,7 @@ window.addEventListener('DOMContentLoaded', async function () {
 
     //Bus Stops
     let busIcons = L.icon({
-        iconUrl: "/images/buslogo.png",
+        iconUrl: "images/buslogo.png",
         iconSize: [15, 20],
         iconAnchor: [10, 15],
         popupAnchor: [0, -30]
@@ -112,7 +112,7 @@ window.addEventListener('DOMContentLoaded', async function () {
     //WEATHER   
     //Weather Icons
     let partlyCloudyNight = L.icon({
-        iconUrl: "/images/weatherIcons/cloudMoon.png",
+        iconUrl: "images/weatherIcons/cloudMoon.png",
         iconSize: [40, 40],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -40],
