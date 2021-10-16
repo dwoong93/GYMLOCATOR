@@ -67,7 +67,7 @@ window.addEventListener('DOMContentLoaded', async function () {
 
     let clubIcons = L.icon({
 // test
-        iconUrl: "/images/clubpin.png",
+        iconUrl: "images/clubpin.png",
 
         iconSize: [30, 40],
         iconAnchor: [15, 40],
