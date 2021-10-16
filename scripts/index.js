@@ -66,7 +66,9 @@ window.addEventListener('DOMContentLoaded', async function () {
     let allClubs = L.layerGroup();
 
     let clubIcons = L.icon({
-        iconUrl: "images/clubPin.png",
+// test
+        iconUrl: "/images/clubpin.png",
+
         iconSize: [30, 40],
         iconAnchor: [15, 40],
         popupAnchor: [0, -30]
@@ -94,7 +96,7 @@ window.addEventListener('DOMContentLoaded', async function () {
 
     //Bus Stops
     let busIcons = L.icon({
-        iconUrl: "/images/buslogo.png",
+        iconUrl: "images/buslogo.png",
         iconSize: [15, 20],
         iconAnchor: [10, 15],
         popupAnchor: [0, -30]
@@ -112,47 +114,47 @@ window.addEventListener('DOMContentLoaded', async function () {
     //WEATHER   
     //Weather Icons
     let partlyCloudyNight = L.icon({
-        iconUrl: "/images/weatherIcons/cloudMoon.png",
+        iconUrl: "images/weatherIcons/cloudMoon.png",
         iconSize: [40, 40],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -40],
     })
 
     let partlyCloudyDay = L.icon({
-        iconUrl: "/images/weatherIcons/partlyCloudyDay.png",
+        iconUrl: "images/weatherIcons/partlyCloudyDay.png",
         iconSize: [75, 75],
         iconAnchor: [30, 60],
         popupAnchor: [-3, -40],
     })
 
     let fairNight = L.icon({
-        iconUrl: "/images/weatherIcons/moon.png",
+        iconUrl: "images/weatherIcons/moon.png",
         iconSize: [75, 75],
         iconAnchor: [30, 60],
         popupAnchor: [10, -40],
     })
 
     let fairDay = L.icon({
-        iconUrl: "/images/weatherIcons/fairDay.png",
+        iconUrl: "images/weatherIcons/fairDay.png",
         iconSize: [75, 75],
         iconAnchor: [30, 60],
         popupAnchor: [10, -40],
     })
 
     let lightRain = L.icon({
-        iconUrl: "/images/weatherIcons/lightRain.png",
+        iconUrl: "images/weatherIcons/lightRain.png",
         iconSize: [75, 75],
         iconAnchor: [30, 60],
         popupAnchor: [10, -40],
     })
     let moderateRain = L.icon({
-        iconUrl: "/images/weatherIcons/moderateRain.png",
+        iconUrl: "images/weatherIcons/moderateRain.png",
         iconSize: [75, 75],
         iconAnchor: [30, 60],
         popupAnchor: [10, -40],
     })
     let heavyThunderyShowers = L.icon({
-        iconUrl: "/images/weatherIcons/heavyThunderyShowers.png",
+        iconUrl: "images/weatherIcons/heavyThunderyShowers.png",
         iconSize: [75, 75],
         iconAnchor: [30, 60],
         popupAnchor: [10, -40],
