@@ -84,9 +84,10 @@ window.addEventListener('DOMContentLoaded', async function () {
     //Loading geoJson data for gym clubs
     let response = await axios.get('data/CLUBS.geojson');
     let clubCoords = response.data.features;
+    
     let clubs = L.geoJson(response.data, {
         onEachFeature: function (feature, layer) {
-            layer.bindPopup('<h5>' + '<b>' + feature.properties.Club + '<b>' + '</h5>' + '<br>' + '<h6>' + '<b>Address: </b>' + '</h6>' +
+            layer.bindPopup('<h5>' + '<b>' + feature.properties.Club.toUpperCase() + '<b>' + '</h5>' + '<br>' + '<h6>' + '<b>Address: </b>' + '</h6>' +
                 feature.properties.Address + '<br>' + '<br>' + '<h6>' + '<b>Contact: </b>' + '</h6>' + feature.properties.Contact + '<br>').addTo(clubCluster);
             layer.setIcon(clubIcons).addTo(clubCluster);
         }
@@ -168,16 +169,18 @@ window.addEventListener('DOMContentLoaded', async function () {
     let weather = response3.data
     for (let w = 0; w < weather.area_metadata.length; w++) { //to loop through 47 pieces of information
         let weatherPoint = (weather.area_metadata[w]); //weatherPoint houses the name of the area and latlong 
+        let weatherPointManipulated = weatherPoint.innerHTML;
 
         let weatherStatus = (weather.items[0].forecasts[w].forecast) //weatherStatus houses 47 instances of a weather status
 
 
+
         // To create markers that will display the location of the areas, name of areas and the weather
         if (weatherStatus === "Partly Cloudy (Night)") {
-            L.marker([weatherPoint.label_location.latitude, weatherPoint.label_location.longitude], { icon: partlyCloudyNight }).bindPopup(weatherPoint.name + '<br>' + weatherStatus).addTo(weatherLayer)
+            L.marker([weatherPointManipulated.label_location.latitude, weatherPointManipulated.label_location.longitude], { icon: partlyCloudyNight }).bindPopup('<h6>'+'<b>'+ weatherPoint.name + '<b>'+'</h6>'+ '<br>' + weatherStatus).addTo(weatherLayer)
         }
         else if (weatherStatus === "Partly Cloudy (Day)" || weatherStatus === "Cloudy") {
-            L.marker([weatherPoint.label_location.latitude, weatherPoint.label_location.longitude], { icon: partlyCloudyDay }).bindPopup(weatherPoint.name + '<br>' + weatherStatus).addTo(weatherLayer)
+            L.marker([weatherPoint.label_location.latitude, weatherPoint.label_location.longitude], { icon: partlyCloudyDay }).bindPopup('<h6>'+'<b>'+ weatherPoint.name + '<b>'+'</h6>' + '<br>' + weatherStatus).addTo(weatherLayer)
         }
         else if (weatherStatus === "Fair (Night)") {
             L.marker([weatherPoint.label_location.latitude, weatherPoint.label_location.longitude], { icon: fairNight }).bindPopup(weatherPoint.name + '<br>' + weatherStatus).addTo(weatherLayer)
