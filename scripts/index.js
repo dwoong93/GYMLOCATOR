@@ -1,5 +1,5 @@
 
-//Coordinates for Singapore
+//Coordinates for Singapore//test
 let singapore = [1.3558681517963378, 103.81259782407385];
 //Centre point on first load
 let map = L.map('singapore-map', {
