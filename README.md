@@ -39,7 +39,7 @@ The CSV was converted to geoJSON using <https://odileeds.github.io/CSV2GeoJSON/>
 
 ## Future Features/Implementation
 
-User Geo-Location:
+User Geolocation:
 This feature should allow the user to clearly find the nearest gym to them.
 
 ## Known Issues or Bugs
