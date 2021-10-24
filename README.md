@@ -18,11 +18,11 @@ Taking inspiration from the Anytime Fitness colours, the elements of the interfa
 All features can be hidden away into a small menu button on the side of the screen, making the interface very easy to use on smaller devices.
 Icons such as the logo, map pins were made using Adobe Illustrator. The Hamburger icon used in the menu toggle was linked from Material Design, https://material.io/. The weather icons used were designed and made  by Alexey Onufriev, https://dribbble.com/onufriev/about. External font "Rubik" was from Google Fonts, https://fonts.google.com/?query=rubik. 
 
+
 ## Features
 
 Features include map pins showing location and address of clubs, map pins showing nearest bus stops to clubs, 
 2-hour weather forecast, view nearest clubs by housing estate/town, and three map tileLayer/ modes.  
-
 
 
 ## Technologies Used
@@ -35,6 +35,18 @@ Bus stop and fly-to coordinates were manually sourced from google maps.
 These Data were then stored in Microsoft Excel and saved as CSV UTF-8.
 The CSV was converted to geoJSON using <https://odileeds.github.io/CSV2GeoJSON/>, which was created by Stuart Lowe, ODI Leeds 2020. (MIT Licence).
  Weather API was taken from Data.gov.sg. 
+
+
+## Future Features/Implementation
+
+User Geo-Location:
+This feature should allow the user to clearly find the nearest gym to them.
+
+## Known Issues or Bugs
+
+GitHub has a strict formatting issue for routes, which only allows image sources to be written in a certain format.
+In the case that the map pins do not render when deployed via GitHub Pages, the project should work correctly when deployed on Netlify. 
+
 
 
 ## Testing Procedure
