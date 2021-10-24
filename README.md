@@ -56,3 +56,22 @@ When clicked, the translucent layer will slide away, revealing the map interface
 
 8) Hovering the mouse cursor over the "Running Man" logo on the top left for two seconds would trigger the logo to slide out to the left. When the browser is shrunken to small, the logo would not be shown to accomodate the lack of view space.  
 
+
+## Deployment Procedure
+
+GitHub Pages
+
+1) Fork the project using the button on the top right of the Repository page
+2) In the forked repository, click on "Settings" and navigate to the pages tab
+3) Under the "Source" Section of "Pages" Click on the "Save" button
+4) The project is now deployed via GitHub Pages
+5) In the case that the images such as icons do not show up while using GitHub Pages, you may use Netlify to deploy the project
+
+Netlify
+
+1) Create an account on Netlify using your GitHub account
+2) On the main landing page of your netlify account, click on "New site from Git"
+3) Click on GitHub, a list of the projects in your linked GitHub account should appear
+4) Click on the forked project to start the deployment
+5) Once it has been deployed, rename the netlify link
+6) The project is now deployed via netlify 
