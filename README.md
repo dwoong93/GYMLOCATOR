@@ -35,3 +35,17 @@ Bus stop and fly-to coordinates were manually sourced from google maps.
 These Data were then stored in Microsoft Excel and saved as CSV UTF-8.
 The CSV was converted to geoJSON using <https://odileeds.github.io/CSV2GeoJSON/>, which was created by Stuart Lowe, ODI Leeds 2020. (MIT Licence).
  Weather API was taken from Data.gov.sg. 
+
+
+Testing Procedure
+
+1) When the page is first loaded, the user should be able to see a translucent layer with a welcome text, prompting them to click or tap anythere to continue.
+When clicked, the translucent layer will slide away, revealing the map interface with Club Pins on the map (Purple in color), a hidden side menu button (hamburger icon) on the left and a logo on the top left of the interface
+
+2) When the user clicks or taps on the Club Pin, a popup bubble containing the Club Name, Address and Contact would appear. The Club Name should have all of it's letters capitalized. 
+
+3) When the user hovers the mouse cursor over the menu button, it should glow and rotate slightly. A click on the button will reveal the menu with the "Town", "Filters" and "Map Style tab".
+
+4) In the Town tab, click on any town, the map should pan and zoom in on the clicked town and the user should see an orange circle with the Club Pins that belong to the clubs in the Town. Clicking on "All Clubs" at the top of the list will zoom out of the town, showing the entire map. At this point, the circle should not be shown. 
+
+5)

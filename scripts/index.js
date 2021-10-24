@@ -106,7 +106,7 @@ window.addEventListener('DOMContentLoaded', async function () {
     let response2 = await axios.get('data/BUS.geojson');
     let busLayer = L.geoJson(response2.data, {
         onEachFeature: function (feature, layer) {
-            layer.bindPopup('<b>Bus Stop Name: </b>' + '<br>' + feature.properties.busStopName + '<br>' + '<br>' + '<b>Bus Stop Number: </b>' + '<br>' + feature.properties.stopID);
+            layer.bindPopup('<b>Bus Stop Name: </b>' + '<br>' +'<b>'+ feature.properties.busStopName +'</b>'+ '<br>' + '<br>' + '<b>Bus Stop Number: </b>' + '<br>' + '<b>'+feature.properties.stopID)+'</b>';
             layer.setIcon(busIcons);
         }
     })
@@ -169,7 +169,6 @@ window.addEventListener('DOMContentLoaded', async function () {
     let weather = response3.data
     for (let w = 0; w < weather.area_metadata.length; w++) { //to loop through 47 pieces of information
         let weatherPoint = (weather.area_metadata[w]); //weatherPoint houses the name of the area and latlong 
-        let weatherPointManipulated = weatherPoint.innerHTML;
 
         let weatherStatus = (weather.items[0].forecasts[w].forecast) //weatherStatus houses 47 instances of a weather status
 
@@ -177,7 +176,7 @@ window.addEventListener('DOMContentLoaded', async function () {
 
         // To create markers that will display the location of the areas, name of areas and the weather
         if (weatherStatus === "Partly Cloudy (Night)") {
-            L.marker([weatherPointManipulated.label_location.latitude, weatherPointManipulated.label_location.longitude], { icon: partlyCloudyNight }).bindPopup('<h6>'+'<b>'+ weatherPoint.name + '<b>'+'</h6>'+ '<br>' + weatherStatus).addTo(weatherLayer)
+            L.marker([weatherPoint.label_location.latitude, weatherPoint.label_location.longitude], { icon: partlyCloudyNight }).bindPopup('<h6>'+'<b>'+ weatherPoint.name + '<b>'+'</h6>'+ '<br>' + weatherStatus).addTo(weatherLayer)
         }
         else if (weatherStatus === "Partly Cloudy (Day)" || weatherStatus === "Cloudy") {
             L.marker([weatherPoint.label_location.latitude, weatherPoint.label_location.longitude], { icon: partlyCloudyDay }).bindPopup('<h6>'+'<b>'+ weatherPoint.name + '<b>'+'</h6>' + '<br>' + weatherStatus).addTo(weatherLayer)
