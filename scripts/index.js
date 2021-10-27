@@ -84,7 +84,7 @@ window.addEventListener('DOMContentLoaded', async function () {
     //Loading geoJson data for gym clubs
     let response = await axios.get('data/CLUBS.geojson');
     let clubCoords = response.data.features;
-    
+    //Amendment Added toUpperCase for "modify CSS properties of selected nodes"
     let clubs = L.geoJson(response.data, {
         onEachFeature: function (feature, layer) {
             layer.bindPopup('<h5>' + '<b>' + feature.properties.Club.toUpperCase() + '<b>' + '</h5>' + '<br>' + '<h6>' + '<b>Address: </b>' + '</h6>' +

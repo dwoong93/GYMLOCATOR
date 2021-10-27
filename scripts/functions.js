@@ -43,17 +43,6 @@ document.addEventListener("DOMContentLoaded", function(e){
     let toalatlng = [1.3352824351385066, 103.8541408547141]
     let woodlatlng = [1.4379089357368429, 103.79525864936457]
     let yishunlatlng = [1.4261049311236949, 103.83229256262324]
-
-
-
-
-
-
-
-
-
-
-    
     let punggollatlng = [1.401469018441145, 103.90283016626528]
     let serangoonlatlng = [1.3562070189597126, 103.87489812663978]
     let sengkanglatlng = [1.3886648098226932, 103.8939135551916]
